@@ -1,5 +1,10 @@
 class ProductController < ApplicationController
 
+  def index
+  	render :index
+  end
+
+
   def create
     @product = Product.new
     @product.save
