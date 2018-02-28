@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iden:</strong>
+  <%= @order.iden %>
+</p>
+
+<p>
+  <strong>Daten:</strong>
+  <%= @order.daten %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
