@@ -8,13 +8,8 @@ class OrdersController < ApplicationController
 
   end
 
-  def new
-    @orders = Order.new
-  end
-
-
   def create
-  #  @orders = Orders.new
+   # @orders = Orders.new
    # @orders.save
     render :create
   end
