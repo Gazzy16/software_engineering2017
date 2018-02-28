@@ -2,4 +2,11 @@
 
 <p><%= @product.description %></p>
 
+<h3>Orders for this product:</h3>
+<ul>
+  <% @product.orders.each do |o| %>
+    <li><%= link_to o, product_order_path(@product, o) %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Make an order', new_product_order_path(@product) %>
