@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Process Laskins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Process</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @process_laskins.each do |process_laskin| %>
+      <tr>
+        <td><%= process_laskin.name %></td>
+        <td><%= process_laskin.process_id %></td>
+        <td><%= link_to 'Show', process_laskin %></td>
+        <td><%= link_to 'Edit', edit_process_laskin_path(process_laskin) %></td>
+        <td><%= link_to 'Destroy', process_laskin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Process Laskin', new_process_laskin_path %>

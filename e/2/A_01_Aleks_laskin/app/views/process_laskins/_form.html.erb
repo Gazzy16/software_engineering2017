@@ -1,0 +1,27 @@
+<%= form_with(model: process_laskin, local: true) do |form| %>
+  <% if process_laskin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(process_laskin.errors.count, "error") %> prohibited this process_laskin from being saved:</h2>
+
+      <ul>
+      <% process_laskin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :process_laskin_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :process_id %>
+    <%= form.number_field :process_id, id: :process_laskin_process_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

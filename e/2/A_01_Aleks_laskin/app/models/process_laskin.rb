@@ -1,0 +1,2 @@
+class ProcessLaskin < ApplicationRecord
+end
