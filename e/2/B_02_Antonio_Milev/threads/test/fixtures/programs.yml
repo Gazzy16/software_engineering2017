@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  threadr: one
+  thread_id: 1
+
+two:
+  threadr: two
+  thread_id: 1
