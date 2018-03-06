@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Process Martin Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @process_martin_ms.each do |process_martin_m| %>
+      <tr>
+        <td><%= process_martin_m.name %></td>
+        <td><%= link_to 'Show', process_martin_m %></td>
+        <td><%= link_to 'Edit', edit_process_martin_m_path(process_martin_m) %></td>
+        <td><%= link_to 'Destroy', process_martin_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Process Martin M', new_process_martin_m_path %>
