@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Id Checks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test thread</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @id_checks.each do |id_check| %>
+      <tr>
+        <td><%= id_check.Test_Thread_id %></td>
+        <td><%= link_to 'Show', id_check %></td>
+        <td><%= link_to 'Edit', edit_id_check_path(id_check) %></td>
+        <td><%= link_to 'Destroy', id_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Id Check', new_id_check_path %>

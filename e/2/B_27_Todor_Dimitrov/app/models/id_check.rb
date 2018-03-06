@@ -1,0 +1,2 @@
+class IdCheck < ApplicationRecord
+end
