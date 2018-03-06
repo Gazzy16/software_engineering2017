@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thread A22 Radoslav Hubenovs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thread_a22_radoslav_hubenovs.each do |thread_a22_radoslav_hubenov| %>
+      <tr>
+        <td><%= link_to 'Show', thread_a22_radoslav_hubenov %></td>
+        <td><%= link_to 'Edit', edit_thread_a22_radoslav_hubenov_path(thread_a22_radoslav_hubenov) %></td>
+        <td><%= link_to 'Destroy', thread_a22_radoslav_hubenov, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thread A22 Radoslav Hubenov', new_thread_a22_radoslav_hubenov_path %>
