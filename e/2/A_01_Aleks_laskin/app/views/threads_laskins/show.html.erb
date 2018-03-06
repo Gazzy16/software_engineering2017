@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @threads_laskin.process_id %>
+</p>
+
+<p>
+  <strong>Processlaskin:</strong>
+  <%= @threads_laskin.processLaskin %>
+</p>
+
+<%= link_to 'Edit', edit_threads_laskin_path(@threads_laskin) %> |
+<%= link_to 'Back', threads_laskins_path %>

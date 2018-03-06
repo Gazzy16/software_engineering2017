@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>T:</strong>
+  <%= @thread_drag.t_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @thread_drag.value %>
+</p>
+
+<%= link_to 'Edit', edit_thread_drag_path(@thread_drag) %> |
+<%= link_to 'Back', thread_drags_path %>

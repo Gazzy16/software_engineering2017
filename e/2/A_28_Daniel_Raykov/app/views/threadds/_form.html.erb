@@ -1,0 +1,27 @@
+<%= form_with(model: threadd, local: true) do |form| %>
+  <% if threadd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(threadd.errors.count, "error") %> prohibited this threadd from being saved:</h2>
+
+      <ul>
+      <% threadd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :classname %>
+    <%= form.text_field :classname, id: :threadd_classname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value, id: :threadd_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

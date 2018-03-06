@@ -1,0 +1,1 @@
+json.partial! "thread_a22_radoslav_hubenovs/thread_a22_radoslav_hubenov", thread_a22_radoslav_hubenov: @thread_a22_radoslav_hubenov
