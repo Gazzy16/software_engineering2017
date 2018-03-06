@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Threadds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classname</th>
+      <th>Value</th>
+      <th>..</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @threadds.each do |threadd| %>
+      <tr>
+        <td><%= threadd.classname %></td>
+        <td><%= threadd.value %></td>
+        <td><%= threadd... %></td>
+        <td><%= link_to 'Show', threadd %></td>
+        <td><%= link_to 'Edit', edit_threadd_path(threadd) %></td>
+        <td><%= link_to 'Destroy', threadd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Threadd', new_threadd_path %>

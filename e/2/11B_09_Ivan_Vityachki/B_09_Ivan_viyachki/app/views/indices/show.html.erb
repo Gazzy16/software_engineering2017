@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Classname:</strong>
+  <%= @index.ClassName %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @index.value %>
+</p>
+
+<%= link_to 'Edit', edit_index_path(@index) %> |
+<%= link_to 'Back', indices_path %>
