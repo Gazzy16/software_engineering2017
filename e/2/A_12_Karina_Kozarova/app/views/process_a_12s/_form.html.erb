@@ -1,0 +1,27 @@
+<%= form_with(model: process_a_12, local: true) do |form| %>
+  <% if process_a_12.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(process_a_12.errors.count, "error") %> prohibited this process_a_12 from being saved:</h2>
+
+      <ul>
+      <% process_a_12.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :process_a_12_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id, id: :process_a_12_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

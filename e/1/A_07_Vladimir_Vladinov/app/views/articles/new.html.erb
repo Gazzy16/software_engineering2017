@@ -1,0 +1,10 @@
+<h1>Create Product</h1>
+<p>Put name and description</p>
+
+<%= form_tag({}, multipart: true) do %>
+
+	<%= text_area_tag 'nameTextBox' %>
+	<%= text_area_tag 'descriptionTextBox' %>
+	<%= submit_tag 'Add' %>
+
+<% end %>
