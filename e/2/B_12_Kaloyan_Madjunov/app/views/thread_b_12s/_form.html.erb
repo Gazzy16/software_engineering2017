@@ -1,0 +1,22 @@
+<%= form_with(model: thread_b_12, local: true) do |form| %>
+  <% if thread_b_12.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thread_b_12.errors.count, "error") %> prohibited this thread_b_12 from being saved:</h2>
+
+      <ul>
+      <% thread_b_12.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value, id: :thread_b_12_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
