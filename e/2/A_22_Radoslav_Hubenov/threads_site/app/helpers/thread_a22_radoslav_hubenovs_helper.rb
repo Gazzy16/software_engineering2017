@@ -1,0 +1,2 @@
+module ThreadA22RadoslavHubenovsHelper
+end

@@ -1,0 +1,22 @@
+<%= form_with(model: threaddeni09, local: true) do |form| %>
+  <% if threaddeni09.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(threaddeni09.errors.count, "error") %> prohibited this threaddeni09 from being saved:</h2>
+
+      <ul>
+      <% threaddeni09.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :processdeni09_id %>
+    <%= form.text_field :processdeni09_id, id: :threaddeni09_processdeni09_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

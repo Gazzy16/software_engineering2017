@@ -1,0 +1,16 @@
+<div class="text-center">
+  <%= form_for [@product, @order] do |f| %>
+    <% if @order.errors.any? %>
+      <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.label :ordered_at, class: 'form-label d-block' %>
+    <%= f.date_field :ordered_at, class: 'form-control' %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Test Threads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_threads.each do |test_thread| %>
+      <tr>
+        <td><%= test_thread.id %></td>
+        <td><%= link_to 'Show', test_thread %></td>
+        <td><%= link_to 'Edit', edit_test_thread_path(test_thread) %></td>
+        <td><%= link_to 'Destroy', test_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test Thread', new_test_thread_path %>

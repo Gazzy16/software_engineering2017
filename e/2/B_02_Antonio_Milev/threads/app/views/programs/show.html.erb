@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Thread:</b>
+  <%= @program.thread_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_threadr_program_path(@program.threadr, @program) %> |
+<%= link_to 'Back', threadr_programs_path(@program.threadr) %>
