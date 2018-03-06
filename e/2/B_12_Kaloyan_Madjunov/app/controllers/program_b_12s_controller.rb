@@ -10,7 +10,10 @@ class ProgramB12sController < ApplicationController
   # GET /program_b_12s/1
   # GET /program_b_12s/1.json
   def show
+<<<<<<< HEAD
+=======
 	@program_b_12s = ProgramB12.all
+>>>>>>> 03df20c1bf85863abd238ff32839656daa6ae3b1
   end
 
   # GET /program_b_12s/new

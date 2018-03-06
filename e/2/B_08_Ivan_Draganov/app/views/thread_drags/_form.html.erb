@@ -1,0 +1,27 @@
+<%= form_with(model: thread_drag, local: true) do |form| %>
+  <% if thread_drag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thread_drag.errors.count, "error") %> prohibited this thread_drag from being saved:</h2>
+
+      <ul>
+      <% thread_drag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :t_id %>
+    <%= form.number_field :t_id, id: :thread_drag_t_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value, id: :thread_drag_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
