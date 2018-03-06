@@ -1,0 +1,22 @@
+<%= form_with(model: method_iv, local: true) do |form| %>
+  <% if method_iv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(method_iv.errors.count, "error") %> prohibited this method_iv from being saved:</h2>
+
+      <ul>
+      <% method_iv.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_id %>
+    <%= form.text_field :id_id, id: :method_iv_id_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
