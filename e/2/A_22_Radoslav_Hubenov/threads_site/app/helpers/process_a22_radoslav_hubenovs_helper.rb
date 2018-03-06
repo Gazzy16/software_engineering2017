@@ -1,0 +1,2 @@
+module ProcessA22RadoslavHubenovsHelper
+end
