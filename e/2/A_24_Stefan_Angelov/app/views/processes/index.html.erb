@@ -1,0 +1,15 @@
+<%= form_with scope: :processes, local: true do |form| %>
+  <p>
+    <%= form.label :id_process %><br>
+    <%= form.text_field :id_process %>
+  </p>
+ 
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

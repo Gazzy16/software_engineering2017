@@ -1,0 +1,2 @@
+module ThreadsLaskinsHelper
+end
