@@ -1,0 +1,17 @@
+<%= form_with(model: thread_a22_radoslav_hubenov, local: true) do |form| %>
+  <% if thread_a22_radoslav_hubenov.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thread_a22_radoslav_hubenov.errors.count, "error") %> prohibited this thread_a22_radoslav_hubenov from being saved:</h2>
+
+      <ul>
+      <% thread_a22_radoslav_hubenov.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
