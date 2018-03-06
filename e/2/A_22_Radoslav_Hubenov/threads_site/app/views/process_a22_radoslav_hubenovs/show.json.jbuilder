@@ -1,0 +1,1 @@
+json.partial! "process_a22_radoslav_hubenovs/process_a22_radoslav_hubenov", process_a22_radoslav_hubenov: @process_a22_radoslav_hubenov

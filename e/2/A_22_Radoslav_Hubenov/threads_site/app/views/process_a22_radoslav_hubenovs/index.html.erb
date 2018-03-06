@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Process A22 Radoslav Hubenovs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @process_a22_radoslav_hubenovs.each do |process_a22_radoslav_hubenov| %>
+      <tr>
+        <td><%= process_a22_radoslav_hubenov.name %></td>
+        <td><%= link_to 'Show', process_a22_radoslav_hubenov %></td>
+        <td><%= link_to 'Edit', edit_process_a22_radoslav_hubenov_path(process_a22_radoslav_hubenov) %></td>
+        <td><%= link_to 'Destroy', process_a22_radoslav_hubenov, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Process A22 Radoslav Hubenov', new_process_a22_radoslav_hubenov_path %>
