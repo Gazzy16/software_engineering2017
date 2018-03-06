@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Process A 12s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @process_a_12s.each do |process_a_12| %>
+      <tr>
+        <td><%= process_a_12.name %></td>
+        <td><%= process_a_12.id %></td>
+        <td><%= link_to 'Show', process_a_12 %></td>
+        <td><%= link_to 'Edit', edit_process_a_12_path(process_a_12) %></td>
+        <td><%= link_to 'Destroy', process_a_12, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Process A 12', new_process_a_12_path %>
