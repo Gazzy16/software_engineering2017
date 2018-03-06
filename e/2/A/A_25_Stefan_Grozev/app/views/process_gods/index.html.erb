@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Process Gods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @process_gods.each do |process_god| %>
+      <tr>
+        <td><%= process_god.name %></td>
+        <td><%= process_god.id %></td>
+        <td><%= link_to 'Show', process_god %></td>
+        <td><%= link_to 'Edit', edit_process_god_path(process_god) %></td>
+        <td><%= link_to 'Destroy', process_god, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Process God', new_process_god_path %>
