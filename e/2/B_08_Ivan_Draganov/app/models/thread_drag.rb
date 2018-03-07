@@ -1,0 +1,2 @@
+class ThreadDrag < ApplicationRecord
+end

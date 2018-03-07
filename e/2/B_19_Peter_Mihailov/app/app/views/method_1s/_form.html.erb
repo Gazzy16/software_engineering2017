@@ -1,0 +1,22 @@
+<%= form_with(model: method_1, local: true) do |form| %>
+  <% if method_1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(method_1.errors.count, "error") %> prohibited this method_1 from being saved:</h2>
+
+      <ul>
+      <% method_1.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :program_id %>
+    <%= form.number_field :program_id, id: :method_1_program_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

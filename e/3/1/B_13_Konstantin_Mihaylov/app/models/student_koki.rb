@@ -1,0 +1,2 @@
+class StudentKoki < ApplicationRecord
+end

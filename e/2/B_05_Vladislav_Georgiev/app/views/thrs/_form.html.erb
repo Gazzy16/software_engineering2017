@@ -1,0 +1,27 @@
+<%= form_with(model: thr, local: true) do |form| %>
+  <% if thr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thr.errors.count, "error") %> prohibited this thr from being saved:</h2>
+
+      <ul>
+      <% thr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :thr_id %>
+    <%= form.number_field :thr_id, id: :thr_thr_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value, id: :thr_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

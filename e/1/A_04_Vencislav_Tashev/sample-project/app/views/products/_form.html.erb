@@ -1,0 +1,21 @@
+<div class="text-center">
+  <%= form_for @product do |f| %>
+    <% if @product.errors.any? %>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.label :name, class: 'form-label d-block' %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label :description, class: 'form-label d-block' %>
+    <%= f.text_area :description, rows: 5, class: 'form-control' %>
+
+    <br />
+
+    <%= f.submit class: 'btn btn-lg btn-primary' %>
+  <% end %>
+</div>

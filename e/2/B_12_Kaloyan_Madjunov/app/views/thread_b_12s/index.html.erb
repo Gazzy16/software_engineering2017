@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thread B 12s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thread_b_12s.each do |thread_b_12| %>
+      <tr>
+        <td><%= thread_b_12.value %></td>
+        <td><%= link_to 'Show', thread_b_12 %></td>
+        <td><%= link_to 'Edit', edit_thread_b_12_path(thread_b_12) %></td>
+        <td><%= link_to 'Destroy', thread_b_12, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thread B 12', new_thread_b_12_path %>

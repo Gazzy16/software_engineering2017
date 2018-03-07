@@ -1,0 +1,21 @@
+<h1>Listing thread_martin_ms</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @thread_martin_ms.each do |thread_martin_m| %>
+  <tr>
+    <td><%= link_to 'Show', [thread_martin_m.process_martin_m, thread_martin_m] %></td>
+    <td><%= link_to 'Edit', edit_process_martin_m_thread_martin_m_path(thread_martin_m.process_martin_m, thread_martin_m) %></td>
+    <td><%= link_to 'Destroy', [thread_martin_m.process_martin_m, thread_martin_m], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Thread martin m', new_process_martin_m_thread_martin_m_path(params[:process_martin_m_id]) %>

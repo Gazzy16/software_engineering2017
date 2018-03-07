@@ -1,0 +1,2 @@
+class ProcessGod < ApplicationRecord
+end
