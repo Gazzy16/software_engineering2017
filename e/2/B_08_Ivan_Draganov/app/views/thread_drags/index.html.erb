@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thread Drags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>T</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thread_drags.each do |thread_drag| %>
+      <tr>
+        <td><%= thread_drag.t_id %></td>
+        <td><%= thread_drag.value %></td>
+        <td><%= link_to 'Show', thread_drag %></td>
+        <td><%= link_to 'Edit', edit_thread_drag_path(thread_drag) %></td>
+        <td><%= link_to 'Destroy', thread_drag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thread Drag', new_thread_drag_path %>

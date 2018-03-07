@@ -1,0 +1,22 @@
+<%= form_with(model: test_thread, local: true) do |form| %>
+  <% if test_thread.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_thread.errors.count, "error") %> prohibited this test_thread from being saved:</h2>
+
+      <ul>
+      <% test_thread.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :test_thread_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

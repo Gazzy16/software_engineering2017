@@ -1,0 +1,37 @@
+<%= form_with(model: student_koki, local: true) do |form| %>
+  <% if student_koki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student_koki.errors.count, "error") %> prohibited this student_koki from being saved:</h2>
+
+      <ul>
+      <% student_koki.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :student_koki_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_name %>
+    <%= form.text_field :second_name, id: :student_koki_second_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :student_koki_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school, id: :student_koki_school %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

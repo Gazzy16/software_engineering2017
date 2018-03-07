@@ -1,0 +1,148 @@
+--------------------------------------------------------------------------
+						2018 / 02 / 28
+--------------------------------------------------------------------------
+
+Article
+	- title
+	- content
+
+Pictures
+	- url
+
+one to many
+many to many
+one to one
+
+My article has many Pictures
+
+1) rails new blog
+*)   rails s 
+   CHECK YOUR BROWSER TYPE localhost:3000
+2) rails generate model article
+*     create    db/migrate/20180220142654_create_articles.rb
+      create    app/models/article.rb
+      invoke    test_unit
+      create      test/models/article_test.rb
+      create      test/fixtures/articles.yml
+ 3) rake db:migrate
+ 4) rails c
+ > a = Article.create
+ > a = Article.al
+ > a.title = "Introduction rails"
+ > a.errors
+ > a.destroy
+
+ 5) rails c
+ > a = Article.create({title: "New title", content: "name"})
+
+ 6) rails g model Picture url:te
+
+ 7) rails c
+ >Picture.create({url: "blabal"})
+
+ 8) in browser type URL rails validate
+   int my create Apllication URI::regexp(%w(http https))
+
+Article
+ id | title | content
+
+Picture
+ id | url | article_id // which is the same as id
+
+ 9) rails g migration add_articleId_to_Pictures
+
+ 10) rails c
+   > Picture.first
+   > p = Picture.first
+   > p.article_id = Article.first.id
+
+IF I WRITE IN MY Picture 
+
+ belongs_to: article 
+
+THAN I SHALL DO
+ >article_id = Article.first
+
+IF I ADD IN Article
+ 
+ has_many: pictures  
+
+I CAN CREATE MORE THAN ONE PICTURE AND I ALSO CREATED ARRAY IN MY DB:MIGRATE
+
+USERINTERFACE
+
+11) rails g controller Articles
+	...
+	  create    app/views/articles
+      create    test/controllers/articles_controller_test.rb
+    ...
+
+ CREATE view IN app/views/articles
+	index.html.erb
+ WRITE SOME TEXT
+
+ IN articles_controller_test.rb
+	
+	def index
+		...
+	end
+
+12) rake routes
+
+CREATE CONTENTS IN MY ARTICLES
+13) Article.create({...}) 
+
+IN YOUR BROWSER TYPE localhost:3000
+
+--------------------------------------------------------------------------
+						2018 / 03 / 06
+--------------------------------------------------------------------------
+
+1) rails generate controller Welcome index
+
+2) Open the app/views/welcome/index.html.erb file in your text editor.
+
+3) Open the file config/routes.rb in your editor.
+
+    Rails.application.routes.draw do
+	  get 'welcome/index' => 'welcome#index'
+	 
+	  root 'welcome#index'
+	end
+
+4) Go to http://localhost:3000/welcome/index to the welcome controller's index action.
+
+5) config/routes.rb
+
+In the Blog application, you will now create a new resource. A resource is the term used for a collection of similar objects, such as articles, people or animals.
+
+	Rails.application.routes.draw do
+	  get 'welcome/index'
+	 
+	  resources :articles
+	 
+	  root 'welcome#index'
+	end
+6)  $ rails routes
+
+7) rails generate controller Articles
+
+ Firstly, you need a place within the application to create a new article. A great place for that would be at /articles/new.
+
+ If you open up the newly generated app/controllers/articles_controller.rb you'll see a fairly empty controller:
+
+ 	class ArticlesController < ApplicationController
+ 		 def new
+  		 end
+	end
+8) In app/views/articles/new.html.erb
+
+	<h1>New Article</h1>
+
+------------------------------------------------------------------------
+// http://guides.rubyonrails.org/getting_started.html
+// https://stackoverflow.com/questions/8510596/connecting-two-rails-models
+Rails Generating & Scaffolding
+
+//https://gist.github.com/alexpchin/b1baa37bd2b4856cc445
+------------------------------------------------------------------------

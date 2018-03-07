@@ -1,0 +1,2 @@
+class TestThread < ApplicationRecord
+end

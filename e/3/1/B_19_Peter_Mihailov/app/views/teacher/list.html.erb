@@ -1,0 +1,13 @@
+<% if @teachers.blank? %>
+<p>There are not any teachers currently in the system.</p>
+<% else %>
+<p>These are the current teachers in our system</p>
+
+<ul id = "teachers">
+   <% @teachers.each do |c| %>
+   <li><%= link_to c.first_name, {:action => 'show', :id => c.id} -%></li>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Teacher", {:action => 'new' }%></p>
