@@ -1,8 +1,8 @@
-cd ..class SubjectsController < ApplicationController
+  class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
-  def b_08_ivan_draganov
-	@subjects = Subject.all
+  def b_08_ivan_draganovsubjects
+    @subjects = Subject.all
   end
 
   # GET /subjects
