@@ -1,5 +1,9 @@
-class SubjectsController < ApplicationController
+cd ..class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+
+  def b_08_ivan_draganov
+	@subjects = Subject.all
+  end
 
   # GET /subjects
   # GET /subjects.json
