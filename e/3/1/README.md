@@ -19,8 +19,11 @@
 = Students participating
 	1,2,3,4,5,6,7,10,12,13,14,16,17,23,24,26,27
 
-
+	Last commit for first group is 081b88335e51ab427a523b034add9fed8dcd9b47
+	Last commit for second group is 9866646ab706f32686a345f0b1856ffa7f6cc1bd
 Second Group
 8,20,21,11,15,9,19,25
 
 Missing 18,22
+
+
