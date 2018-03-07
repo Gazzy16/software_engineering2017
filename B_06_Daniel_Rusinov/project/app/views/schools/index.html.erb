@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Second Name</th>
+      <th>Email</th>
+      <th>School name</th>
+      <th>School number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.first_name %></td>
+        <td><%= student.second_name %></td>
+        <td><%= student.email %></td>
+        <% @schools.each do |school| %>
+            <td><%= school.school_name %></td>
+            <td><%= school.school_number %></td>
+        <% end %>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>
