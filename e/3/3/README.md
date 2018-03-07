@@ -1,4 +1,3 @@
-
 FOr A class
 = Task
 1. Create Computer on url /computers/new
