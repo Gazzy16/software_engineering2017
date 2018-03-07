@@ -5,6 +5,7 @@ class ComputersController < ApplicationController
   # GET /computers.json
   def index
     @computers = Computer.all
+
   end
 
   # GET /computers/1
