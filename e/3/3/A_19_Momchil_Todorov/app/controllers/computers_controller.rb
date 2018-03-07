@@ -1,11 +1,13 @@
 class ComputersController < ApplicationController
 	def index
+		render "new"
 	end
 
 	def create
 		@computer = Computer.new(par)
 		@computer.save
 		redirect_to @computer
+		
 	end
 
 	def show
