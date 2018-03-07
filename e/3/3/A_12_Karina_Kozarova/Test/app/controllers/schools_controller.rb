@@ -10,7 +10,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1
   # GET /schools/1.json
   def show
-    
+
   end
 
   # GET /schools/new
@@ -29,11 +29,9 @@ class SchoolsController < ApplicationController
 
     respond_to do |format|
       if @school.save
-        format.html { redirect_to @school, notice: 'School was successfully created.' }
-        format.json { render :show, status: :created, location: @school }
+        redirect_to @school, notice: 'School was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @school.errors, status: :unprocessable_entity }
+        render :new 
       end
     end
   end
@@ -41,25 +39,19 @@ class SchoolsController < ApplicationController
   # PATCH/PUT /schools/1
   # PATCH/PUT /schools/1.json
   def update
-    respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: 'School was successfully updated.' }
-        format.json { render :show, status: :ok, location: @school }
+        redirect_to @school, notice: 'School was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @school.errors, status: :unprocessable_entity }
+        render :edit 
       end
-    end
   end
 
   # DELETE /schools/1
   # DELETE /schools/1.json
   def destroy
     @school.destroy
-    respond_to do |format|
-      format.html { redirect_to schools_url, notice: 'School was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to schools_url, notice: 'School was successfully destroyed.' 
+      
   end
 
   private
