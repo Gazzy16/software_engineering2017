@@ -12,6 +12,7 @@ FOr A class
 	- room size - integer
 
 3. Validate that when creating computer the room id for existing room is specified. If not the validation should fail
+
 4. Validate that no two computer with the same processor could be created
 5. Show a list of computers and which room holds them
 	- this is available at /#{my_index}subjects/ where my_index is your class_number_firstname_lastname (example /11a_17_MartinDatsevsubjects/
