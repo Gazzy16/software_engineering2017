@@ -3,7 +3,6 @@ class StudentsController < ApplicationController
 
 	def b_12_kaloyan_madjunov
     @students = Student.all
-		
 	end
 
   # GET /students
