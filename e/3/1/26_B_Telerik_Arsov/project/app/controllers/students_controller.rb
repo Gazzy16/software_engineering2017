@@ -1,14 +1,11 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-	def b_12_kaloyan_madjunov
-    @students = Student.all
-	end
-
   # GET /students
   # GET /students.json
   def index
     @students = Student.all
+    @schools = School.all
   end
 
   # GET /students/1
