@@ -4,7 +4,6 @@ class ProductController < ApplicationController
   	render :index
   end
 
-
   def create
     @product = Product.new
     @product.save
