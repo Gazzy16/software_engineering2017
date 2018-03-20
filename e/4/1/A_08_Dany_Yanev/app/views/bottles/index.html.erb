@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bottles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Brand</th>
+      <th>Table ID</th>
+      <th>Table Width</th>
+      <th>Table Height</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bottles.each do |bottle| %>
+      <tr>
+        <td><%= bottle.color %></td>
+        <td><%= bottle.brand %></td>
+        <td><%= bottle.table.id %></td>
+        <td><%= bottle.table.width %></td>
+        <td><%= bottle.table.height %></td>
+        <td><%= link_to 'Show', bottle %></td>
+        <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
+        <td><%= link_to 'Destroy', bottle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bottle', new_bottle_path %>
