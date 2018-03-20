@@ -26,6 +26,8 @@ class FilmsController < ApplicationController
   def create
     @film = Film.new(film_params)
 
+    if !Film.exists?(:name => (film_params[:name]))
+    
     respond_to do |format|
       if @film.save
         format.html { redirect_to @film, notice: 'Film was successfully created.' }
@@ -36,6 +38,7 @@ class FilmsController < ApplicationController
       end
     end
   end
+end
 
   # PATCH/PUT /films/1
   # PATCH/PUT /films/1.json
