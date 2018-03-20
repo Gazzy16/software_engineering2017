@@ -10,11 +10,14 @@ class TablesController < ApplicationController
 	end
 	
 	def show
-		@bottle = Bottle.all
-		@table = Table.all
+		@table = Table.find(params[:id])
 	end
 
 	def new
 
+	end
+private
+	def par
+		params.require(:table).permit(:width, :hight)
 	end
 end
