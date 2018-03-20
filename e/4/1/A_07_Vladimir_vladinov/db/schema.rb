@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20180320125158) do
     t.integer "table_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand"], name: "index_bottles_on_brand", unique: true
+    t.index ["table_id"] name: "index_bottles_on_table_id"
   end
 
   create_table "tables", force: :cascade do |t|

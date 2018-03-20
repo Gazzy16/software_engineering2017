@@ -1,5 +1,6 @@
 class BottlesController < ApplicationController
 	def index
+		@bottles = Bottle.all
 	end
 
 	def new
@@ -10,9 +11,12 @@ class BottlesController < ApplicationController
 		@bottle = Bottle.new(params.require(:bottle).permit(:color, :brand, :table_id))
 		@bottle.color = params[:color]
 		@bottle.brand = params[:brand]
-		@bottle.table_id = table_id
-		@bottle.save
-		redirect_to @bottle
+		@bottle.table_id = params[:table_id]
+		if @bottle.save
+			render plain: "Success"
+		else
+			render plain: "Fail"
+		end
 	end
 
 	def show
