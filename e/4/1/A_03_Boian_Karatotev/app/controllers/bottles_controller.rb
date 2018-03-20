@@ -24,12 +24,6 @@ class BottlesController < ApplicationController
   # POST /bottles
   # POST /bottles.json
   def create
-      Bottle.all.each do |a|
-          if Bottle.last.brand == a.brand
-              return 0
-          end
-      end
-
     @bottle = Bottle.new(bottle_params)
 
     respond_to do |format|
@@ -76,9 +70,5 @@ class BottlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bottle_params
       params.require(:bottle).permit(:color, :brand, :table_id)
-    end
-
-    def show
-
     end
 end
