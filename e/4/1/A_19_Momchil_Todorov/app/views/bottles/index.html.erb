@@ -1,7 +1,14 @@
 <% @bottle.each do |bottle| %>
-      <tr>
-        <td><%= bottle.color %></td>
-        <td><%= bottle.brand %></td>
-		<td><%= bottle.table_id %></td>
-      </tr>
+	<table>
+		<tr>
+		  <th>Color</th>
+		  <th>Brand</th>
+		  <th>Table id</th>
+		</tr>
+      	<tr>
+		    <td><%= bottle.color %></td>
+		    <td><%= bottle.brand %></td>
+			<td><%= bottle.table_id %></td>
+      	</tr>
+	</table>
 <% end %>

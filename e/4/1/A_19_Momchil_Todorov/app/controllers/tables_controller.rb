@@ -4,7 +4,9 @@ class TablesController < ApplicationController
 	end
 
 	def create
-	
+		@table = Table.new(par)
+		@table.save
+		redirect_to @table	
 	end
 	
 	def show
