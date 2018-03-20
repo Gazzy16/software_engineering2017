@@ -1,3 +1,3 @@
 class Table < ApplicationRecord
-has_many :bottle
+has_many :bottles
 end
