@@ -30,6 +30,12 @@ class BottlesController < ApplicationController
           end
       end
 
+      Table.all.each do |a|
+          if Bottle.last.table_id == a.id
+              return 0
+          end
+      end
+
     @bottle = Bottle.new(bottle_params)
 
     respond_to do |format|
