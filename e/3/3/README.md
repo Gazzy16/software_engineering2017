@@ -18,6 +18,7 @@ FOr A class
 	- this is available at /#{my_index}subjects/ where my_index is your class_number_firstname_lastname (example /11a_17_MartinDatsevsubjects/
 	- show a table with the columns : computer color, computer brand, computer processor, room number, room size
 
+Last commit: f8ea0b40459e398a9597880c807a092a5ec2b02b
 
 = Students participating
 
