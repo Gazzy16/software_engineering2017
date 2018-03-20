@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Table width:</strong>
+  <%= @table.table_width %>
+</p>
+
+<p>
+  <strong>Table height:</strong>
+  <%= @table.table_height %>
+</p>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>

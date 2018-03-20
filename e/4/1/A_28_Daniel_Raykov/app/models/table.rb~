@@ -1,0 +1,4 @@
+class Table < ApplicationRecord
+  has_many :bottles
+  self.primary_key = "tableid"
+end
