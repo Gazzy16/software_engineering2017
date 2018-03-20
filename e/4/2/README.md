@@ -1,9 +1,9 @@
 FOr A class
 = Task
-1. Create Film on url /bottles/new
+1. Create Film on url /films/new
 	- name
 	
-2. Create Cinema /table/new
+2. Create Cinema /cinemas/new
 	-location
 	-
 One ciname could have many Films and one film can have many cinemas
