@@ -85,3 +85,129 @@ Processing by BottlesController#index as HTML
 Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/11a_06_ViktorNaychevbottles/" for 127.0.0.1 at 2018-03-20 15:12:56 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BottlesController#index as HTML
+  Rendering bottles/index.html.erb within layouts/application
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT "bottles".* FROM "bottles"[0m
+  Rendered bottles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 239ms (Views: 223.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bottles" for 127.0.0.1 at 2018-03-20 15:13:12 +0200
+Processing by BottlesController#index as HTML
+  Rendering bottles/index.html.erb within layouts/application
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT "bottles".* FROM "bottles"[0m
+  Rendered bottles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bottles/new" for 127.0.0.1 at 2018-03-20 15:13:17 +0200
+Processing by BottlesController#new as HTML
+  Rendering bottles/new.html.erb within layouts/application
+  Rendered bottles/_form.html.erb (69.1ms)
+  Rendered bottles/new.html.erb within layouts/application (70.9ms)
+Completed 200 OK in 142ms (Views: 107.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tables" for 127.0.0.1 at 2018-03-20 15:13:25 +0200
+Processing by TablesController#index as HTML
+  Rendering tables/index.html.erb within layouts/application
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  Rendered tables/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 61ms (Views: 55.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tables/new" for 127.0.0.1 at 2018-03-20 15:13:27 +0200
+Processing by TablesController#new as HTML
+  Rendering tables/new.html.erb within layouts/application
+  Rendered tables/_form.html.erb (7.8ms)
+  Rendered tables/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 44ms (Views: 34.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/tables" for 127.0.0.1 at 2018-03-20 15:13:31 +0200
+Processing by TablesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J4DFjXXElops34+XRSs12MIKQBSddmagyXlTYfI4syGUH7GfITozi1rvhnYZriBxmNo8n9RWB2B3WhidIxkXOw==", "table"=>{"width"=>"50", "height"=>"50"}, "commit"=>"Create Table"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "tables" ("width", "height", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["width", 50], ["height", 50], ["created_at", "2018-03-20 13:13:31.884856"], ["updated_at", "2018-03-20 13:13:31.884856"]]
+  [1m[35m (60.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/tables/1
+Completed 302 Found in 68ms (ActiveRecord: 61.6ms)
+
+
+Started GET "/tables/1" for 127.0.0.1 at 2018-03-20 15:13:31 +0200
+Processing by TablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tables/show.html.erb within layouts/application
+  Rendered tables/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bottles" for 127.0.0.1 at 2018-03-20 15:13:36 +0200
+Processing by BottlesController#index as HTML
+  Rendering bottles/index.html.erb within layouts/application
+  [1m[36mBottle Load (0.3ms)[0m  [1m[34mSELECT "bottles".* FROM "bottles"[0m
+  Rendered bottles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bottles/new" for 127.0.0.1 at 2018-03-20 15:13:38 +0200
+Processing by BottlesController#new as HTML
+  Rendering bottles/new.html.erb within layouts/application
+  Rendered bottles/_form.html.erb (3.0ms)
+  Rendered bottles/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bottles" for 127.0.0.1 at 2018-03-20 15:13:48 +0200
+Processing by BottlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3yHBjZdCFbDoXf48agx8PATwdpIQhXzS0aAOQfb0Q05vsSGutLcapM5iGpVKiclqtbDV2d6PgZJru9PRGs7/CQ==", "bottle"=>{"color"=>"blue", "brand"=>"bepis", "table_id"=>"1"}, "commit"=>"Create Bottle"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bottles" ("color", "brand", "table_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "blue"], ["brand", "bepis"], ["table_id", 1], ["created_at", "2018-03-20 13:13:48.425434"], ["updated_at", "2018-03-20 13:13:48.425434"]]
+  [1m[35m (53.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/bottles/1
+Completed 302 Found in 165ms (ActiveRecord: 54.4ms)
+
+
+Started GET "/bottles/1" for 127.0.0.1 at 2018-03-20 15:13:48 +0200
+Processing by BottlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT  "bottles".* FROM "bottles" WHERE "bottles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bottles/show.html.erb within layouts/application
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bottles/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bottles/1/edit" for 127.0.0.1 at 2018-03-20 15:13:50 +0200
+Processing by BottlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT  "bottles".* FROM "bottles" WHERE "bottles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bottles/edit.html.erb within layouts/application
+  Rendered bottles/_form.html.erb (3.6ms)
+  Rendered bottles/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bottles" for 127.0.0.1 at 2018-03-20 15:13:52 +0200
+Processing by BottlesController#index as HTML
+  Rendering bottles/index.html.erb within layouts/application
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT "bottles".* FROM "bottles"[0m
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bottles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bottles" for 127.0.0.1 at 2018-03-20 15:14:46 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BottlesController#index as HTML
+  Rendering bottles/index.html.erb within layouts/application
+  [1m[36mBottle Load (0.2ms)[0m  [1m[34mSELECT "bottles".* FROM "bottles"[0m
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bottles/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 274ms (Views: 255.9ms | ActiveRecord: 1.8ms)
+
+
