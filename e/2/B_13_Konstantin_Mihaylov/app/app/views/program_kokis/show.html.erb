@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<<<<<<< HEAD
+  <strong>Thread:</strong>
+  <%= @program_koki.method_id %>
+=======
+  <strong>program:</strong>
+  <%= @program_koki.method_id - @program_koki.id %>
+>>>>>>> 03df20c1bf85863abd238ff32839656daa6ae3b1
+</p>
+
+<p>
+
+  <strong>Name:</strong>
+  <%= @program_koki.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @program_koki.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @program_koki.content %>
+</p>
+
+<%= link_to 'Edit', edit_program_koki_path(@program_koki) %> |
+<%= link_to 'Back', program_kokis_path %>

@@ -1,0 +1,2 @@
+class MethodKokiController < ApplicationController
+end

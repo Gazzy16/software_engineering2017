@@ -1,0 +1,32 @@
+<%= form_with(model: program_koki, local: true) do |form| %>
+  <% if program_koki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program_koki.errors.count, "error") %> prohibited this program_koki from being saved:</h2>
+
+      <ul>
+      <% program_koki.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :program_koki_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :program_koki_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :program_koki_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
