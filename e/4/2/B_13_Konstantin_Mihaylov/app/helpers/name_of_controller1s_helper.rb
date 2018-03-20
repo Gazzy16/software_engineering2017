@@ -1,0 +1,2 @@
+module NameOfController1sHelper
+end
