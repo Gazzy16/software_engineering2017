@@ -142,7 +142,6 @@ In the Blog application, you will now create a new resource. A resource is the t
 ------------------------------------------------------------------------
 // http://guides.rubyonrails.org/getting_started.html
 // https://stackoverflow.com/questions/8510596/connecting-two-rails-models
-Rails Generating & Scaffolding
-
+	Rails Generating & Scaffolding	
 //https://gist.github.com/alexpchin/b1baa37bd2b4856cc445
 ------------------------------------------------------------------------

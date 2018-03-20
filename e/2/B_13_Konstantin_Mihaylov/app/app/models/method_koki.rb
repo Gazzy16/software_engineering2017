@@ -1,0 +1,2 @@
+class MethodKoki < ApplicationRecord
+end

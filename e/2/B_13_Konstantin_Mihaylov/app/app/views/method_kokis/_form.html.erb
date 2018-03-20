@@ -1,0 +1,32 @@
+<%= form_with(model: method_koki, local: true) do |form| %>
+  <% if method_koki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(method_koki.errors.count, "error") %> prohibited this method_koki from being saved:</h2>
+
+      <ul>
+      <% method_koki.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :method_koki_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :method_koki_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :method_koki_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

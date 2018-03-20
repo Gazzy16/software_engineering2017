@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @method_koki.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @method_koki.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @method_koki.content %>
+</p>
+
+<%= link_to 'Edit', edit_method_koki_path(@method_koki) %> |
+<%= link_to 'Back', method_kokis_path %>

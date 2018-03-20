@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Program Kokis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @program_kokis.each do |program_koki| %>
+      <tr>
+        <td><%= program_koki.name %></td>
+        <td><%= program_koki.title %></td>
+        <td><%= program_koki.content %></td>
+        <td><%= link_to 'Show', program_koki %></td>
+        <td><%= link_to 'Edit', edit_program_koki_path(program_koki) %></td>
+        <td><%= link_to 'Destroy', program_koki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program Koki', new_program_koki_path %>
