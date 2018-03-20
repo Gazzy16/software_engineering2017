@@ -5,6 +5,7 @@ class BottlesController < ApplicationController
   # GET /bottles.json
   def index
     @bottles = Bottle.all
+    @tables = Table.all
   end
 
   # GET /bottles/1
