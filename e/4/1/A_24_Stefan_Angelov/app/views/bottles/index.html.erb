@@ -1,0 +1,18 @@
+<h1>Listing bottles</h1>
+ 
+<table>
+  <tr>
+    <th>Color</th>
+    <th>Brand</th>
+    <th>Table id</th>
+  </tr>
+ 
+  <% @bottles.each do |b| %>
+    <tr>
+      <td><%= b.color %></td>
+      <td><%= b.brand %></td>
+      <td><%= b.table_id %></td>
+      <td><%= link_to 'Show', bottles_path(b) %></td>
+    </tr>
+  <% end %>
+</table>
