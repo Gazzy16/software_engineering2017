@@ -10,6 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180320130733) do
+
+  create_table "bottles", force: :cascade do |t|
+    t.string "color"
+    t.string "brand"
+    t.integer "table_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["table_id"], name: "index_bottles_on_table_id"
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.integer "width"
+    t.integer "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
