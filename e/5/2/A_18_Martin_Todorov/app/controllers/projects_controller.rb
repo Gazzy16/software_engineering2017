@@ -29,8 +29,8 @@ class ProjectsController < ApplicationController
                 if Project.last.name == a.name
                     return 0
                 else
-                    format.html { redirect_to @project, notice: 'Project was successfully created.' }
-                    format.json { render :show, status: :created, location: @project }
+                    # format.html { redirect_to @project, notice: 'Project was successfully created.' }
+                    # format.json { render :show, status: :created, location: @project }
                 end
             end
             index += 1
