@@ -1,0 +1,2 @@
+module ClientProductConnectionsHelper
+end

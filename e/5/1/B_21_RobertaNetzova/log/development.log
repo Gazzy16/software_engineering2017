@@ -1,0 +1,350 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (59.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (73.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20180321113730)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321113730"]]
+  [1m[35m (69.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClients (20180321113916)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "clients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321113916"]]
+  [1m[35m (74.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClientProducts (20180321114014)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "client_products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "client_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321114014"]]
+  [1m[35m (69.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-21 11:46:54.903476"], ["updated_at", "2018-03-21 11:46:54.903476"]]
+  [1m[35m (53.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/client/new" for 127.0.0.1 at 2018-03-21 13:51:56 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/client/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/clients/new" for 127.0.0.1 at 2018-03-21 13:51:59 +0200
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (9.1ms)
+  Rendered clients/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 523ms (Views: 502.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2018-03-21 13:52:04 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ud54wxHru/QXYJOyXUM/JpRgCD9dlKIUKDEPcatAcDhiANv180gGGGpX8LieAYtpMTYfyqy4tbmwFxoSm4jZMg==", "client"=>{"name"=>"az"}, "commit"=>"Create Client"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."name" = ? LIMIT ?[0m  [["name", "az"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "clients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "az"], ["created_at", "2018-03-21 11:52:04.616661"], ["updated_at", "2018-03-21 11:52:04.616661"]]
+  [1m[35m (49.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/1
+Completed 302 Found in 79ms (ActiveRecord: 49.7ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2018-03-21 13:52:04 +0200
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2018-03-21 13:52:10 +0200
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (2.7ms)
+  Rendered clients/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2018-03-21 13:52:14 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1kuSi9g9h7RE/v4/Sz6guLP75YAYBWEsIQuPwRkYwnfllTG9Op46WDnJnTWIfBT3Fq3ydekpdoG5LZqiKdBrfQ==", "client"=>{"name"=>"pak az"}, "commit"=>"Create Client"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."name" = ? LIMIT ?[0m  [["name", "pak az"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "clients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pak az"], ["created_at", "2018-03-21 11:52:14.431798"], ["updated_at", "2018-03-21 11:52:14.431798"]]
+  [1m[35m (129.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/2
+Completed 302 Found in 137ms (ActiveRecord: 130.6ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2018-03-21 13:52:14 +0200
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-03-21 13:52:25 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.6ms)
+  Rendered products/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 71ms (Views: 52.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-03-21 13:52:30 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RmrC8TidCgwadiC38LuIpJZFa7fMXsRpB02QqcBn+c51tGHH2j634GdBQ70z+TzrMxN8Qj1y08Sfa4XK8K9QxA==", "product"=>{"name"=>"nekvo"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "nekvo"], ["created_at", "2018-03-21 11:52:30.362432"], ["updated_at", "2018-03-21 11:52:30.362432"]]
+  [1m[35m (122.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 128ms (ActiveRecord: 123.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-03-21 13:52:30 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 55ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-03-21 13:52:33 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.2ms)
+  Rendered products/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-03-21 13:52:38 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BiD5ncvLpNPeKBPbn1S8YRZ/3SL8lTSAtHRzFxnpJrA1/lqrKWgZP6MfcNFcFggusynK1w25Iy0sUmZ0KSGPug==", "product"=>{"name"=>"nekwo"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "nekwo"], ["created_at", "2018-03-21 11:52:38.332931"], ["updated_at", "2018-03-21 11:52:38.332931"]]
+  [1m[35m (75.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 81ms (ActiveRecord: 76.4ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2018-03-21 13:52:38 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-03-21 13:52:41 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (1.9ms)
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-03-21 13:52:45 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jW9voZiB/aQuTIT1XqOSirWzMMa/MUuzPqK/5vi+9sG+scyXeiJASFN75/+d4SbFEOUnM04dXB6mhKqFyHZfyw==", "product"=>{"name"=>"nekwo"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "nekwo"], ["created_at", "2018-03-21 11:52:45.107315"], ["updated_at", "2018-03-21 11:52:45.107315"]]
+  [1m[35m (102.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 107ms (ActiveRecord: 103.2ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2018-03-21 13:52:45 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-03-21 13:52:49 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-03-21 13:53:24 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.2ms)
+  Rendered products/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 48ms (Views: 31.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-03-21 13:53:32 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHBmKdm2437/6eySEI/LNVd6FAYXV5FCrCJnOdcEhrW/rsUfOxVekoLej5jTzX968iwD8+Z7hu80BHJa58wvvw==", "product"=>{"name"=>"nekwo"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "nekwo"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.4ms)
+  Rendered products/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 29.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-03-21 13:53:34 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9d28MMC2cGrkCzHFpgUXbtt1w1d2npLVowzVe1rGgbjGAx8GIhXNhpk8Us9lR6MhfiPUooeyhXg7KsAYag4osg==", "product"=>{"name"=>"ne"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "ne"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ne"], ["created_at", "2018-03-21 11:53:34.811718"], ["updated_at", "2018-03-21 11:53:34.811718"]]
+  [1m[35m (162.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 168ms (ActiveRecord: 163.1ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2018-03-21 13:53:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "//B_21_Roberta_Netzovaproducts" for 127.0.0.1 at 2018-03-21 13:54:04 +0200
+Processing by ClientProductsController#index as HTML
+  Rendering client_products/index.html.erb within layouts/application
+  [1m[36mClientProduct Load (0.2ms)[0m  [1m[34mSELECT "client_products".* FROM "client_products"[0m
+  Rendered client_products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 25.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/client_products/new" for 127.0.0.1 at 2018-03-21 13:54:23 +0200
+Processing by ClientProductsController#new as HTML
+  Rendering client_products/new.html.erb within layouts/application
+  Rendered client_products/_form.html.erb (9.2ms)
+  Rendered client_products/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 55ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/client_products" for 127.0.0.1 at 2018-03-21 13:54:27 +0200
+Processing by ClientProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LopM0zjCm2OSI/Z00vitSE3I6Yw219JXmlTCQTTukMwdVO/l2mEmj+8UlX4RuhkH6J7+ecf7xfoCctciBCY5xg==", "client_product"=>{"client_id"=>"1", "product_id"=>"2"}, "commit"=>"Create Client product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "client_products" ("client_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 1], ["product_id", 2], ["created_at", "2018-03-21 11:54:27.051340"], ["updated_at", "2018-03-21 11:54:27.051340"]]
+  [1m[35m (126.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/client_products/1
+Completed 302 Found in 159ms (ActiveRecord: 127.8ms)
+
+
+Started GET "/client_products/1" for 127.0.0.1 at 2018-03-21 13:54:27 +0200
+Processing by ClientProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClientProduct Load (0.2ms)[0m  [1m[34mSELECT  "client_products".* FROM "client_products" WHERE "client_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering client_products/show.html.erb within layouts/application
+  Rendered client_products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/client_products/new" for 127.0.0.1 at 2018-03-21 13:54:34 +0200
+Processing by ClientProductsController#new as HTML
+  Rendering client_products/new.html.erb within layouts/application
+  Rendered client_products/_form.html.erb (3.5ms)
+  Rendered client_products/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/client_products" for 127.0.0.1 at 2018-03-21 13:54:39 +0200
+Processing by ClientProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eb0sd6puoirI18sRYtBYlWPciao4W6Wev2gzk4/2P6YiY49BSM0fxrXgqBuhkuzaxoqeX8l3sjMnTibwvz6WrA==", "client_product"=>{"client_id"=>"3", "product_id"=>"8"}, "commit"=>"Create Client product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering client_products/new.html.erb within layouts/application
+  Rendered client_products/_form.html.erb (3.5ms)
+  Rendered client_products/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/client_products" for 127.0.0.1 at 2018-03-21 13:54:43 +0200
+Processing by ClientProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q0N8vpK4hldT6nZz0lvWKKyUo3yIgXHRz3jksKzebmtwnd+IcBs7uy7dFXkRGWJnCcK0iXmtZnxXXvHTnBbHYQ==", "client_product"=>{"client_id"=>"8", "product_id"=>"8"}, "commit"=>"Create Client product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering client_products/new.html.erb within layouts/application
+  Rendered client_products/_form.html.erb (3.3ms)
+  Rendered client_products/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/client_products" for 127.0.0.1 at 2018-03-21 13:54:53 +0200
+Processing by ClientProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7I6+s2GVlgCTrf0E+wUArd3zZc+vL3RsRpdCxi0CqEHfUB2FgzYr7O6ang44R7TieKVyOl4DY8HesVelHcoBSw==", "client_product"=>{"client_id"=>"1", "product_id"=>"4"}, "commit"=>"Create Client product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "client_products" ("client_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 1], ["product_id", 4], ["created_at", "2018-03-21 11:54:53.184522"], ["updated_at", "2018-03-21 11:54:53.184522"]]
+  [1m[35m (58.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/client_products/2
+Completed 302 Found in 65ms (ActiveRecord: 59.4ms)
+
+
+Started GET "/client_products/2" for 127.0.0.1 at 2018-03-21 13:54:53 +0200
+Processing by ClientProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClientProduct Load (0.1ms)[0m  [1m[34mSELECT  "client_products".* FROM "client_products" WHERE "client_products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering client_products/show.html.erb within layouts/application
+  Rendered client_products/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/B_21_Roberta_Netzovaproducts" for 127.0.0.1 at 2018-03-21 13:55:02 +0200
+Processing by ClientProductsController#index as HTML
+  Rendering client_products/index.html.erb within layouts/application
+  [1m[36mClientProduct Load (0.3ms)[0m  [1m[34mSELECT "client_products".* FROM "client_products"[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered client_products/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.7ms)
+
+
