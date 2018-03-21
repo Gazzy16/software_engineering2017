@@ -1,5 +1,4 @@
 class Cinema < ApplicationRecord
-	has_many :films
-	validates :name, uniqueness: true
-	
+	has_many :cinema_films
+	has_many :films, through: :cinema_films
 end

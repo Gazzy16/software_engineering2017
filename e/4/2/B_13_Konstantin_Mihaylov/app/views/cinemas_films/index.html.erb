@@ -12,8 +12,8 @@
   <tbody>
     <% @cinemas_films.each do |cinemas_film| %>
       <tr>
-        <td><%= cinemas_film.cinemas %></td>
-        <td><%= cinemas_film.films %></td>       
+        <td><%= cinemas_film.cinema_id %></td>
+        <td><%= cinemas_film.film_id %></td>       
         <td><%= link_to 'Show', cinemas_film %></td>
         <td><%= link_to 'Edit', edit_cinemas_film_path(cinemas_film) %></td>
         <td><%= link_to 'Destroy', cinemas_film, method: :delete, data: { confirm: 'Are you sure?' } %></td>

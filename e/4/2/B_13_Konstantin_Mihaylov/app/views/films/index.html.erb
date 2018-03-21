@@ -15,7 +15,8 @@
      <% film.cinemas.each do |cinema| %>
       <tr>
         <td><%= film.name %></td>
-        <td><%= cinema.location %></td>     
+        <td><%= cinema.location %></td>    
+        <td><%= film.cinemas.string %></td>
         <td><%= link_to 'Show', film %></td>
         <td><%= link_to 'Edit', edit_film_path(film) %></td>
         <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>

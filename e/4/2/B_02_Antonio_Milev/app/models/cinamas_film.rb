@@ -1,0 +1,2 @@
+class CinamasFilm < ApplicationRecord
+end
