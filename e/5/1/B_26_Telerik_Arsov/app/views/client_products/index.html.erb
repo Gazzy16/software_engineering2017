@@ -16,7 +16,7 @@
       <tr>
         <td><%= client_product.client %></td>
         <% client_product.client.client_products.each do |c| %>
-          <td> <%= client_product.find(c.client_id).product.name %> </td>
+          <td> <%= client_products.find(c.client_id).product.name %> </td>
         <% end %>
         <td><%= client_product.product %></td>
         <td><%= link_to 'Show', client_product %></td>
