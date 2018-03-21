@@ -3,10 +3,10 @@ class FilmsController < ApplicationController
 
   # GET /films
   # GET /films.json
- def index
-    @cinemas = Cinema.all
-	@films = Film.all
-  end
+   def index
+           @films = Film.all
+           @cinemas = Cinema.all
+   end
 
   # GET /films/1
   # GET /films/1.json
@@ -70,6 +70,6 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:name, :cinema_id)
+      params.require(:film).permit(:name)
     end
 end
