@@ -12,13 +12,13 @@
 
   <tbody>
     <% @products.each do |product| %>
+		 <% product.clients.each do |client| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= client.name %></td>
       </tr>
     <% end %>
+<% end %>
   </tbody>
 </table>
 
