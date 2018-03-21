@@ -1,0 +1,4 @@
+class Client < ApplicationRecord
+    has_many :client_products
+    has_many :p, through: :client_product
+end
