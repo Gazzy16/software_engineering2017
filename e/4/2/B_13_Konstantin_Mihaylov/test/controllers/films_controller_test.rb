@@ -17,7 +17,7 @@ class FilmsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create film" do
     assert_difference('Film.count') do
-      post films_url, params: { film: { string: @film.string } }
+      post films_url, params: { film: { name: @film.name } }
     end
 
     assert_redirected_to film_url(Film.last)
@@ -34,7 +34,7 @@ class FilmsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update film" do
-    patch film_url(@film), params: { film: { string: @film.string } }
+    patch film_url(@film), params: { film: { name: @film.name } }
     assert_redirected_to film_url(@film)
   end
 

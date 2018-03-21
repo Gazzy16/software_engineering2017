@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Connection Product Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Clinet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connection_product_clients.each do |connection_product_client| %>
+      <tr>
+        <td><%= connection_product_client.product_id %></td>
+        <td><%= connection_product_client.clinet_id %></td>
+        <td><%= link_to 'Show', connection_product_client %></td>
+        <td><%= link_to 'Edit', edit_connection_product_client_path(connection_product_client) %></td>
+        <td><%= link_to 'Destroy', connection_product_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connection Product Client', new_connection_product_client_path %>
