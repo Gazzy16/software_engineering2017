@@ -1,0 +1,1 @@
+json.partial! "product_client_connections/product_client_connection", product_client_connection: @product_client_connection
