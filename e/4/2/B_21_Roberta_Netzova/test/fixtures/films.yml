@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  cinema_id: 1
 
 two:
   name: MyString
-  cinema_id: 1

@@ -1,54 +1,407 @@
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (59.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  [1m[35m (68.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateCinemas (20180320144821)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCinemas (20180321083024)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "cinemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321083024"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFilms (20180321083040)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "cinemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180320144821"]]
-  [1m[35m (70.3ms)[0m  [1m[36mcommit transaction[0m
-Migrating to CreateFilms (20180320145052)
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "films" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cinema_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180320145052"]]
-  [1m[35m (66.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-20 15:02:27.001951"], ["updated_at", "2018-03-20 15:02:27.001951"]]
-  [1m[35m (41.5ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/cinemas/new" for 127.0.0.1 at 2018-03-20 17:07:04 +0200
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "films" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321083040"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCinemaFilms (20180321083134)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "cinema_films" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cinema_id" integer, "film_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180321083134"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-21 08:38:24.459161"], ["updated_at", "2018-03-21 08:38:24.459161"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cinemas/new" for 127.0.0.1 at 2018-03-21 01:38:40 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by CinemasController#new as HTML
   Rendering cinemas/new.html.erb within layouts/application
-  Rendered cinemas/_form.html.erb (72.9ms)
-  Rendered cinemas/new.html.erb within layouts/application (74.7ms)
-Completed 200 OK in 581ms (Views: 544.0ms | ActiveRecord: 0.9ms)
+  Rendered cinemas/_form.html.erb (112.4ms)
+  Rendered cinemas/new.html.erb within layouts/application (116.5ms)
+Completed 200 OK in 2652ms (Views: 2560.7ms | ActiveRecord: 1.8ms)
 
 
-Started POST "/cinemas" for 127.0.0.1 at 2018-03-20 17:07:08 +0200
+Started POST "/cinemas" for 127.0.0.1 at 2018-03-21 01:38:48 -0700
 Processing by CinemasController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h/XMgCauR6gvQRE7ZrJgK2ujzIW2Gy26pGnQuKsCzZEnlqy03EGRMDoDK9ZWE4o2S6+URsWbY+nNyiZPUpafQg==", "cinema"=>{"location"=>"nnnn"}, "commit"=>"Create Cinema"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYB4KMLMcrh0x1IKqpf8EDQwREDCfKmvSrKIzb2PpfPO7DYi+/kttA+RJG4HfHEl3ppAeXV3NYm7+42dsw1q4Q==", "cinema"=>{"location"=>"burgas"}, "commit"=>"Create Cinema"}
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
-Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "cinemas" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "burgas"], ["created_at", "2018-03-21 08:38:48.209251"], ["updated_at", "2018-03-21 08:38:48.209251"]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cinemas/1
+Completed 302 Found in 60ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/cinemas/1" for 127.0.0.1 at 2018-03-21 01:38:48 -0700
+Processing by CinemasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCinema Load (0.7ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cinemas/show.html.erb within layouts/application
+  Rendered cinemas/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 182ms (Views: 128.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cinemas/new" for 127.0.0.1 at 2018-03-21 01:38:50 -0700
+Processing by CinemasController#new as HTML
+  Rendering cinemas/new.html.erb within layouts/application
+  Rendered cinemas/_form.html.erb (19.7ms)
+  Rendered cinemas/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 235ms (Views: 228.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cinemas" for 127.0.0.1 at 2018-03-21 01:38:53 -0700
+Processing by CinemasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9RnJegcN5F3+rexspefF0R6Q/d3Few2TaE1oxwLt7jcWdYdwPji7UYX7mggIDEjk9Dr55HJwkbWZBG2XDG8hJQ==", "cinema"=>{"location"=>"varna"}, "commit"=>"Create Cinema"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "cinemas" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "varna"], ["created_at", "2018-03-21 08:38:53.450328"], ["updated_at", "2018-03-21 08:38:53.450328"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cinemas/2
+Completed 302 Found in 38ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/cinemas/2" for 127.0.0.1 at 2018-03-21 01:38:53 -0700
+Processing by CinemasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCinema Load (0.3ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cinemas/show.html.erb within layouts/application
+  Rendered cinemas/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 133ms (Views: 127.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for 127.0.0.1 at 2018-03-21 01:38:59 -0700
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
 
 
   
-NoMethodError (undefined method `name' for #<Cinema:0x007f7d52560960>):
+SyntaxError (/home/roberta/Desktop/mitov/rails/rail/app/models/film.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+	validates :name, uniqueness :true
+	                             ^):
   
-app/controllers/cinemas_controller.rb:31:in `block in create'
-app/controllers/cinemas_controller.rb:30:in `create'
+app/models/film.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/controllers/films_controller.rb:18:in `new'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+Started GET "/films/new" for 127.0.0.1 at 2018-03-21 01:43:54 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/_form.html.erb (70.4ms)
+  Rendered films/new.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 714ms (Views: 624.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/films" for 127.0.0.1 at 2018-03-21 01:44:02 -0700
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/JedoSuWyQ99piClA+r/xI+J3D+fcwZkqUbRtWGjGJUnhB8vZsEKEag7uY55CbK+JQjSUl2UD9j7B4W2wRDcA==", "film"=>{"name"=>"tarzan"}, "commit"=>"Create Film"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilm Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "films" WHERE "films"."name" = ? LIMIT ?[0m  [["name", "tarzan"], ["LIMIT", 1]]
+  [1m[35mSQL (13.4ms)[0m  [1m[32mINSERT INTO "films" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tarzan"], ["created_at", "2018-03-21 08:44:02.143017"], ["updated_at", "2018-03-21 08:44:02.143017"]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/films/1
+Completed 302 Found in 108ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/films/1" for 127.0.0.1 at 2018-03-21 01:44:02 -0700
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.6ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering films/show.html.erb within layouts/application
+  Rendered films/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 204ms (Views: 165.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/films/new" for 127.0.0.1 at 2018-03-21 01:44:05 -0700
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/_form.html.erb (27.7ms)
+  Rendered films/new.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 275ms (Views: 271.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/films" for 127.0.0.1 at 2018-03-21 01:44:08 -0700
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SCFMSDlTNfQiUzdS0ooJy683/nA7D017r4pxdjK0Hz2rTQJCAGZq+FkFQTZ/YYT+RZ36SYwE0V1ew3QmPDbQLw==", "film"=>{"name"=>"tarzan"}, "commit"=>"Create Film"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilm Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "films" WHERE "films"."name" = ? LIMIT ?[0m  [["name", "tarzan"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/_form.html.erb (29.3ms)
+  Rendered films/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 328ms (Views: 298.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/films" for 127.0.0.1 at 2018-03-21 01:44:13 -0700
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uuVq1K0WjdMLNilztVRac6ypmb4PMefqtzH6RjzgWq5ZiSTelCPS33BgXxcYv9dGRgOdh7g6e8xGeP8WMmKVvA==", "film"=>{"name"=>"haka"}, "commit"=>"Create Film"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilm Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "films" WHERE "films"."name" = ? LIMIT ?[0m  [["name", "haka"], ["LIMIT", 1]]
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "films" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "haka"], ["created_at", "2018-03-21 08:44:13.994931"], ["updated_at", "2018-03-21 08:44:13.994931"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/films/2
+Completed 302 Found in 68ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/films/2" for 127.0.0.1 at 2018-03-21 01:44:14 -0700
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (4.5ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering films/show.html.erb within layouts/application
+  Rendered films/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 230ms (Views: 215.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/cinema_films/new" for 127.0.0.1 at 2018-03-21 01:44:21 -0700
+Processing by CinemaFilmsController#new as HTML
+  Rendering cinema_films/new.html.erb within layouts/application
+  Rendered cinema_films/_form.html.erb (20.1ms)
+  Rendered cinema_films/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 440ms (Views: 200.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/cinema_films" for 127.0.0.1 at 2018-03-21 01:44:26 -0700
+Processing by CinemaFilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XYbL+owG+nh5TBuMzsfWEHDjuIRlhV+UZ4Xyu8QGEj++6oXwtTOldAIabehjLFslmkm8vdKOw7KWzPfryoTdLQ==", "cinema_film"=>{"cinema_id"=>"1", "film_id"=>"1"}, "commit"=>"Create Cinema film"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCinema Load (0.4ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.5ms)[0m  [1m[32mINSERT INTO "cinema_films" ("cinema_id", "film_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cinema_id", 1], ["film_id", 1], ["created_at", "2018-03-21 08:44:26.215464"], ["updated_at", "2018-03-21 08:44:26.215464"]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cinema_films/1
+Completed 302 Found in 194ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/cinema_films/1" for 127.0.0.1 at 2018-03-21 01:44:26 -0700
+Processing by CinemaFilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCinemaFilm Load (6.8ms)[0m  [1m[34mSELECT  "cinema_films".* FROM "cinema_films" WHERE "cinema_films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cinema_films/show.html.erb within layouts/application
+  Rendered cinema_films/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 150ms (Views: 122.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/cinema_films/new" for 127.0.0.1 at 2018-03-21 01:44:33 -0700
+Processing by CinemaFilmsController#new as HTML
+  Rendering cinema_films/new.html.erb within layouts/application
+  Rendered cinema_films/_form.html.erb (22.8ms)
+  Rendered cinema_films/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 207ms (Views: 204.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cinema_films" for 127.0.0.1 at 2018-03-21 01:44:36 -0700
+Processing by CinemaFilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KY11y0cLAjJUMQJ74G/sH54pWqGc5u0278yK31Pv9PrK4TvBfj5dPi9ndB9NhGEqdINemCvtcRAehY+PXW076A==", "cinema_film"=>{"cinema_id"=>"1", "film_id"=>"2"}, "commit"=>"Create Cinema film"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCinema Load (0.4ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (14.0ms)[0m  [1m[32mINSERT INTO "cinema_films" ("cinema_id", "film_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cinema_id", 1], ["film_id", 2], ["created_at", "2018-03-21 08:44:36.692926"], ["updated_at", "2018-03-21 08:44:36.692926"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cinema_films/2
+Completed 302 Found in 64ms (ActiveRecord: 23.9ms)
+
+
+Started GET "/cinema_films/2" for 127.0.0.1 at 2018-03-21 01:44:36 -0700
+Processing by CinemaFilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCinemaFilm Load (0.3ms)[0m  [1m[34mSELECT  "cinema_films".* FROM "cinema_films" WHERE "cinema_films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cinema_films/show.html.erb within layouts/application
+  Rendered cinema_films/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 178ms (Views: 160.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for 127.0.0.1 at 2018-03-21 01:44:44 -0700
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (10.5ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  Rendered films/index.html.erb within layouts/application (41.9ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 10.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `cinemas' for nil:NilClass):
+    13: 
+    14:   <tbody>
+    15:     <% @films.each do |film| %>
+    16: 	 <% @film.cinemas.each do |film| %>
+    17:       <tr>
+    18:         <td><%= film.name %></td>
+    19: 	<td><%= cinema.location %></td>
+  
+app/views/films/index.html.erb:16:in `block in _app_views_films_index_html_erb___670603528628198103_40621400'
+app/views/films/index.html.erb:15:in `_app_views_films_index_html_erb___670603528628198103_40621400'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/films" for 127.0.0.1 at 2018-03-21 01:45:48 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.6ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  Rendered films/index.html.erb within layouts/application (63.7ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `cinemas' for nil:NilClass):
+    13: 
+    14:   <tbody>
+    15:     <% @films.each do |film| %>
+    16: 	 <% @film.cinemas.each do |cinema| %>
+    17:       <tr>
+    18:         <td><%= film.name %></td>
+    19: 	<td><%= cinema.location %></td>
+  
+app/views/films/index.html.erb:16:in `block in _app_views_films_index_html_erb___2476376156118727311_43434560'
+app/views/films/index.html.erb:15:in `_app_views_films_index_html_erb___2476376156118727311_43434560'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/films" for 127.0.0.1 at 2018-03-21 01:47:37 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.7ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  [1m[36mCinema Load (2.7ms)[0m  [1m[34mSELECT "cinemas".* FROM "cinemas" INNER JOIN "cinema_films" ON "cinemas"."id" = "cinema_films"."cinema_id" WHERE "cinema_films"."film_id" = ?[0m  [["film_id", 1]]
+  [1m[36mCinema Load (1.0ms)[0m  [1m[34mSELECT "cinemas".* FROM "cinemas" INNER JOIN "cinema_films" ON "cinemas"."id" = "cinema_films"."cinema_id" WHERE "cinema_films"."film_id" = ?[0m  [["film_id", 2]]
+  Rendered films/index.html.erb within layouts/application (203.5ms)
+Completed 200 OK in 669ms (Views: 597.8ms | ActiveRecord: 8.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rety" for 127.0.0.1 at 2018-03-21 01:51:30 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CinemaFilmsController#index as HTML
+  Rendering cinema_films/index.html.erb within layouts/application
+  [1m[36mCinemaFilm Load (0.5ms)[0m  [1m[34mSELECT "cinema_films".* FROM "cinema_films"[0m
+  Rendered cinema_films/index.html.erb within layouts/application (63.5ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `locatiom' for #<CinemaFilm:0x0000000424aeb0>):
+    14:   <tbody>
+    15:     <% @cinema_films.each do |cinema_film| %>
+    16:       <tr>
+    17:         <td><%= cinema_film.locatiom %></td>
+    18:         <td><%= cinema_film.name %></td>
+    19:       </tr>
+    20:     <% end %>
+  
+app/views/cinema_films/index.html.erb:17:in `block in _app_views_cinema_films_index_html_erb__223254910381903986_35358120'
+app/views/cinema_films/index.html.erb:15:in `_app_views_cinema_films_index_html_erb__223254910381903986_35358120'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rety" for 127.0.0.1 at 2018-03-21 01:52:26 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CinemaFilmsController#index as HTML
+  Rendering cinema_films/index.html.erb within layouts/application
+  [1m[36mCinemaFilm Load (0.5ms)[0m  [1m[34mSELECT "cinema_films".* FROM "cinema_films"[0m
+  Rendered cinema_films/index.html.erb within layouts/application (70.1ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `location' for #<CinemaFilm:0x00000005533478>):
+    14:   <tbody>
+    15:     <% @cinema_films.each do |cinema_film| %>
+    16:       <tr>
+    17:         <td><%= cinema_film.location %></td>
+    18:         <td><%= cinema_film.name %></td>
+    19:       </tr>
+    20:     <% end %>
+  
+app/views/cinema_films/index.html.erb:17:in `block in _app_views_cinema_films_index_html_erb___935153383133917386_45269940'
+app/views/cinema_films/index.html.erb:15:in `_app_views_cinema_films_index_html_erb___935153383133917386_45269940'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rety" for 127.0.0.1 at 2018-03-21 01:54:37 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CinemaFilmsController#index as HTML
+  Rendering cinema_films/index.html.erb within layouts/application
+  [1m[36mCinemaFilm Load (0.7ms)[0m  [1m[34mSELECT "cinema_films".* FROM "cinema_films"[0m
+  Rendered cinema_films/index.html.erb within layouts/application (156.2ms)
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 13.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<CinemaFilm:0x000000042a8880>):
+    13: 
+    14:   <tbody>
+    15:     <% @cinema_films.each do |cinema_film| %>
+    16: 	<% cinema_film.each do |cinema| %>
+    17: 		<% @cinema.each do |film| %>
+    18:       			<tr>
+    19:         			<td><%= cinema.location %></td>
+  
+app/views/cinema_films/index.html.erb:16:in `block in _app_views_cinema_films_index_html_erb___1890055800976527576_45789000'
+app/views/cinema_films/index.html.erb:15:in `_app_views_cinema_films_index_html_erb___1890055800976527576_45789000'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rety" for 127.0.0.1 at 2018-03-21 01:57:29 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CinemaFilmsController#index as HTML
+  Rendering cinema_films/index.html.erb within layouts/application
+  [1m[36mCinemaFilm Load (0.7ms)[0m  [1m[34mSELECT "cinema_films".* FROM "cinema_films"[0m
+  Rendered cinema_films/index.html.erb within layouts/application (65.4ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<CinemaFilm:0x00000003593708>):
+    13: 
+    14:   <tbody>
+    15:     <% @cinema_films.each do |cinema_film| %>
+    16: 	<% cinema_film.each do |film| %>
+    17: 		
+    18:       			<tr>
+    19:         			<td><%= cinema_film.location %></td>
+  
+app/views/cinema_films/index.html.erb:16:in `block in _app_views_cinema_films_index_html_erb___4348609536347960308_28618960'
+app/views/cinema_films/index.html.erb:15:in `_app_views_cinema_films_index_html_erb___4348609536347960308_28618960'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rety" for 127.0.0.1 at 2018-03-21 01:58:34 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CinemaFilmsController#index as HTML
+  Rendering cinema_films/index.html.erb within layouts/application
+  [1m[36mCinemaFilm Load (0.5ms)[0m  [1m[34mSELECT "cinema_films".* FROM "cinema_films"[0m
+  [1m[36mCinema Load (0.5ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFilm Load (0.9ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCinema Load (0.4ms)[0m  [1m[34mSELECT  "cinemas".* FROM "cinemas" WHERE "cinemas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFilm Load (0.5ms)[0m  [1m[34mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered cinema_films/index.html.erb within layouts/application (200.2ms)
+Completed 200 OK in 825ms (Views: 740.2ms | ActiveRecord: 9.0ms)
+
+
