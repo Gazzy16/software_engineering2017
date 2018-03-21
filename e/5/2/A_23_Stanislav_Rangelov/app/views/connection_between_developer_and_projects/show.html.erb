@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Developer:</strong>
+  <%= @connection_between_developer_and_project.developer_id %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @connection_between_developer_and_project.project_id %>
+</p>
+
+<%= link_to 'Edit', edit_connection_between_developer_and_project_path(@connection_between_developer_and_project) %> |
+<%= link_to 'Back', connection_between_developer_and_projects_path %>
