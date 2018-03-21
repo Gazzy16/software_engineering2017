@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :cinema_films
-  resources :cinemas
+  resources :cinemas_films
   resources :films
-  resources :name_of_controller1s
+  resources :cinemas
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "/B_13_Konstantin_Mihaylov_films/", to: "films#index"
 end
