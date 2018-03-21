@@ -69,6 +69,6 @@ class ConnectionProductClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def connection_product_client_params
-      params.require(:connection_product_client).permit(:product_id, :clinet_id)
+      params.require(:connection_product_client).permit(:product_id, :client_id)
     end
 end
