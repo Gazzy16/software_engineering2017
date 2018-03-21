@@ -5,6 +5,8 @@ class ClientProductsController < ApplicationController
   # GET /client_products.json
   def index
     @client_products = ClientProduct.all
+    @clients = Client.all
+    @products = Product.all
   end
 
   # GET /client_products/1
