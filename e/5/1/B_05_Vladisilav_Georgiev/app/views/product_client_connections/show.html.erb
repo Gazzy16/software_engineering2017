@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_client_connection.product_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @product_client_connection.client_id %>
+</p>
+
+<%= link_to 'Edit', edit_product_client_connection_path(@product_client_connection) %> |
+<%= link_to 'Back', product_client_connections_path %>
