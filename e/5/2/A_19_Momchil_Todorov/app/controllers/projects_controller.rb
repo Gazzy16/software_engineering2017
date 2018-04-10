@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	def index
-		render 'new'
+		@project = Project.all
+		#render 'new'
 	end
 
 	def create

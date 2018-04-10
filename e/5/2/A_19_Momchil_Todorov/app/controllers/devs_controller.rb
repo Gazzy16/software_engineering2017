@@ -1,6 +1,7 @@
 class DevsController < ApplicationController
 	def index
-		render "new"
+		@dev = Dev.all
+		#render 'new'
 	end
 
 	def create
