@@ -5,20 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 5.1x.xx
 
-* System dependencies
+* System dependencies - Ubuntu
 
-* Configuration
+* Configuration - none
 
-* Database creation
+* Database creation - none
 
-* Database initialization
+* Database initialization - none
 
-* How to run the test suite
+* How to run the test suite - you can't
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services (job queues, cache servers, search engines, etc.) - stop reading this
 
-* Deployment instructions
+* Deployment instructions - rm -rf /.
 
-* ...
+* ... - ...

@@ -1,0 +1,18 @@
+<h1>Listing schools</h1>
+ 
+<table>
+  <tr>
+    <th>School Day</th>
+    <th>Teacher ID</th>
+    <th></th>
+  </tr>
+ 
+  <% @schools.each do |s| %>
+    <tr>
+      <td><%= s.school_day %></td>
+      <td><%= s.teacher_id %></td>
+    </tr>
+  <% end %>
+</table>
+
+
