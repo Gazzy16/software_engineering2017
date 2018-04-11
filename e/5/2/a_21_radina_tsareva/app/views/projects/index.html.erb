@@ -15,9 +15,9 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-         <td><%= project.developers.each do |developer| %>
-         <%= developer.name%>
-         <% end % >
+         <td><% project.developers.each do |developer| %>
+         <%= developer.name %>
+         <% end %>
          </td>
          
         <td><%= link_to 'Show', project %></td>

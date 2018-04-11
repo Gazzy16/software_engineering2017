@@ -21,6 +21,15 @@ private
   end
 
 	def validate_roles
-    errors.add(:user, "too much") if user.subscription > 10
+    #errors.add(:user, "too much") if user.subscription > 10
+		if self.subscription.price < 10
+			if self.subscription.subscriptions_users.where(role_user :teacher).count > 2
+				errors.add("too much teachers")
+			end
+
+			if self.subscription.subscriptions_users.where(role_user :student).count > 10
+				errors.add("too much students")
+			end
+		end
   end
 end
