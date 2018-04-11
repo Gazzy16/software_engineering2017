@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180321113837) do
 
   create_table "connection_product_clients", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "clinet_id"
+    t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

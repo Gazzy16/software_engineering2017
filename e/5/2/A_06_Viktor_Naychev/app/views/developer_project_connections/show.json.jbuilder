@@ -1,0 +1,1 @@
+json.partial! "developer_project_connections/developer_project_connection", developer_project_connection: @developer_project_connection

@@ -14,11 +14,8 @@
   <tbody>
     <% @client_products.each do |client_product| %>
       <tr>
-        <td><%= client_product.client_id %></td>
-        <td><%= client_product.product_id %></td>
-        <td><%= link_to 'Show', client_product %></td>
-        <td><%= link_to 'Edit', edit_client_product_path(client_product) %></td>
-        <td><%= link_to 'Destroy', client_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= client_product.client.name %></td>
+        <td><%= client_product.product.name %></td>
       </tr>
     <% end %>
   </tbody>

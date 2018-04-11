@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Developer</th>
+    <th>Project</th>
+  </tr>
+ 
+  <% @cons.each do |c| %>
+    <tr>
+      <td><%= c.developer_id %></td>
+      <td><%= c.project_id %></td>
+    </tr>
+  <% end %>
+</table>
