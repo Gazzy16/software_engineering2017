@@ -21,6 +21,6 @@ private
   end
 
 	def validate_roles
-    errors.add(:tags, "too much") if user.subscription > 10
+    errors.add(:user, "too much") if user.subscription > 10
   end
 end
