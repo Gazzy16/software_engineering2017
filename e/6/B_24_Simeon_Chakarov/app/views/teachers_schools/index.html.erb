@@ -14,14 +14,11 @@
   <tbody>
     <% @teachers_schools.each do |teachers_school| %>
       <tr>
-        <td><%= teachers_school.id_teacher %></td>
-        <td><%= teachers_school.id_school %></td>
-        <td><%= link_to 'Show', teachers_school %></td>
-        <td><%= link_to 'Edit', edit_teachers_school_path(teachers_school) %></td>
-        <td><%= link_to 'Destroy', teachers_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= teachers_school.teacher.name %></td>
+        <td><%= teachers_school.school.name %></td>
       </tr>
     <% end %>
-  </tbody>
+</tbody>
 </table>
 
 <br>
