@@ -24,10 +24,16 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-      Project.all.each do |a|
-            if Project.last.name == a.name
-                return 0
+      Project.all.each_with_index do |a, index|
+            if index <= Project.count - 1
+                if Project.last.name == a.name
+                    return 0
+                else
+                    # format.html { redirect_to @project, notice: 'Project was successfully created.' }
+                    # format.json { render :show, status: :created, location: @project }
+                end
             end
+            index += 1
         end
 
     @project = Project.new(project_params)
