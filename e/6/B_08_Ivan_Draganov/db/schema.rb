@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411102821) do
+ActiveRecord::Schema.define(version: 20180411103335) do
 
   create_table "school_classes", force: :cascade do |t|
     t.string "day"
     t.integer "class_teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teacher_classes", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.integer "teacher_classID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
