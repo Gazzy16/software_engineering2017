@@ -10,8 +10,10 @@ class SubscriptionUser < ApplicationRecord
             all << position
             teachers = all.select{|e| e == "teacher"}
             students = all.select{|e| e == "student"}
-            if(teachers.length > 2 || students.length > 10)
-                errors.add(:subscription, "does not allow")
+            if(teachers.length > 2)
+                errors.add(:subscription_id, "of <10 does not allow more than 2 teachers")
+            elsif(students.length > 10)
+                errors.add(:subscription_id, "of <10 does not allow more than 10 students")
             end
         end
     end
