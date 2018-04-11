@@ -6,7 +6,6 @@ class TeachersSchoolsController < ApplicationController
   def index
     @teachers_schools = TeachersSchool.all
 	@teachers = Teacher.all
-	@school_classes = SchoolClasses.all
   end
 
   # GET /teachers_schools/1
