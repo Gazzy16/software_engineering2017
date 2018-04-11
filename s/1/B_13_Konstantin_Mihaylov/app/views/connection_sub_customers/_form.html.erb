@@ -1,0 +1,17 @@
+<%= form_with(model: connection_sub_customer, local: true) do |form| %>
+  <% if connection_sub_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(connection_sub_customer.errors.count, "error") %> prohibited this connection_sub_customer from being saved:</h2>
+
+      <ul>
+      <% connection_sub_customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

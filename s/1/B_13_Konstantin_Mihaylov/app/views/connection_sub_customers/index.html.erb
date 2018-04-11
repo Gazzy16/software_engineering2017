@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Connection Sub Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connection_sub_customers.each do |connection_sub_customer| %>
+      <tr>
+        <td><%= link_to 'Show', connection_sub_customer %></td>
+        <td><%= link_to 'Edit', edit_connection_sub_customer_path(connection_sub_customer) %></td>
+        <td><%= link_to 'Destroy', connection_sub_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connection Sub Customer', new_connection_sub_customer_path %>
