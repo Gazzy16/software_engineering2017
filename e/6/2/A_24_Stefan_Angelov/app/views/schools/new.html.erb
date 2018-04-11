@@ -1,0 +1,15 @@
+<%= form_with scope: :school, local: true do |form| %>
+  <p>
+    <%= form.label :school_day %><br>
+    <%= form.text_field :school_day %>
+  </p>
+ 
+  <p>
+    <%= form.label :teacher_id %><br>
+    <%= form.text_field :teacher_id %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
