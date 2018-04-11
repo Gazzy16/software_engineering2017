@@ -1,0 +1,1 @@
+json.partial! "user_subscribtion_connections/user_subscribtion_connection", user_subscribtion_connection: @user_subscribtion_connection

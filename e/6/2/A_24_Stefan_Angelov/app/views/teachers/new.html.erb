@@ -1,0 +1,25 @@
+<%= form_with scope: :teacher, local: true do |form| %>
+  <p>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+ 
+  <p>
+    <%= form.label :middle_name %><br>
+    <%= form.text_field :middle_name %>
+  </p>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :subject %><br>
+    <%= form.text_field :subject %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

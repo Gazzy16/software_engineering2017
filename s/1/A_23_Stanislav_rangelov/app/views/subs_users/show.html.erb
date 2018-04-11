@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iserid:</strong>
+  <%= @subs_user.iserid %>
+</p>
+
+<p>
+  <strong>Subscriptionid:</strong>
+  <%= @subs_user.subscriptionid %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @subs_user.type %>
+</p>
+
+<%= link_to 'Edit', edit_subs_user_path(@subs_user) %> |
+<%= link_to 'Back', subs_users_path %>
