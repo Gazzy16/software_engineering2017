@@ -14,8 +14,8 @@
   <tbody>
     <% @subscription_users.each do |subscription_user| %>
       <tr>
-        <td><%= subscription_user.user %></td>
-        <td><%= subscription_user.subscription %></td>
+        <td><%= subscription_user.user.id %></td>
+        <td><%= subscription_user.subscription.id %></td>
         <td><%= link_to 'Show', subscription_user %></td>
         <td><%= link_to 'Edit', edit_subscription_user_path(subscription_user) %></td>
         <td><%= link_to 'Destroy', subscription_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
