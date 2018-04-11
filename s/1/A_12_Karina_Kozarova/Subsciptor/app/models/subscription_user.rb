@@ -8,16 +8,16 @@ class SubscriptionUser < ApplicationRecord
   	price_under_10 && over_two_teachers && over_ten_students
   end
 
-  def price_under_10
+  def price_under_10?
 
   end
 
 
-  def over_two_teachers
+  def over_two_teachers?
 
   end
 
-  def over_ten_students
+  def over_ten_students?
 
   end
 end
