@@ -1,0 +1,27 @@
+<%= form_with(model: connect, local: true) do |form| %>
+  <% if connect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(connect.errors.count, "error") %> prohibited this connect from being saved:</h2>
+
+      <ul>
+      <% connect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :teacher_id %>
+    <%= form.text_field :teacher_id, id: :connect_teacher_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school_id %>
+    <%= form.text_field :school_id, id: :connect_school_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
