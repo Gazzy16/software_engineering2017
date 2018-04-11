@@ -14,7 +14,7 @@
   <tbody>
     <% @schoolclasses.each do |schoolclass| %>
       <tr>
-        <td><%= schoolclass.day %></td>
+        <td><%= schoolclass.school_class_day %></td>
         <td><%= schoolclass.teacher_id %></td>
         <td><%= link_to 'Show', schoolclass %></td>
         <td><%= link_to 'Edit', edit_schoolclass_path(schoolclass) %></td>
