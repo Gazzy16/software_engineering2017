@@ -503,3 +503,117 @@ Processing by ClientProductsController#index as HTML
 Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/clients" for 127.0.0.1 at 2018-04-11 13:16:52 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 233ms (Views: 218.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2018-04-11 13:16:54 +0300
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (18.2ms)
+  Rendered clients/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2018-04-11 13:16:56 +0300
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1y62j/rKURXAhpsDt2XQYIrHpJxbeLaujUUgSIFS6LVeISRxN51SJc26hkGy0VLUWxljgwh5rOXJeRu5vSRrEA==", "client"=>{"name"=>"asd"}, "commit"=>"Create Client"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "clients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asd"], ["created_at", "2018-04-11 10:16:56.264144"], ["updated_at", "2018-04-11 10:16:56.264144"]]
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/2
+Completed 302 Found in 110ms (ActiveRecord: 105.6ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2018-04-11 13:16:56 +0300
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients" for 127.0.0.1 at 2018-04-11 13:16:58 +0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2018-04-11 13:16:59 +0300
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (2.4ms)
+  Rendered clients/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2018-04-11 13:17:02 +0300
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0dEz/Ib0CWe+BOES7FQfnGy6ZDAshqmIq0zmPpqSAsRY3qECS6MKV7M4/FDp4J0ovWSjL3+Hs8PvcN3PpuSBYQ==", "client"=>{"name"=>"asdasd"}, "commit"=>"Create Client"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "clients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asdasd"], ["created_at", "2018-04-11 10:17:02.065428"], ["updated_at", "2018-04-11 10:17:02.065428"]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/3
+Completed 302 Found in 102ms (ActiveRecord: 97.0ms)
+
+
+Started GET "/clients/3" for 127.0.0.1 at 2018-04-11 13:17:02 +0300
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for 127.0.0.1 at 2018-04-11 13:17:03 +0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2018-04-11 13:17:05 +0300
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (3.2ms)
+  Rendered clients/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2018-04-11 13:17:07 +0300
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dY6xNjBt4elDd6y3KXbtM/53uFF/bTH+LHbrZvjdqZT8gSPI/Tri2U5LsfUswm+HL6l/TixsK7VoStCXxKsqMQ==", "client"=>{"name"=>"asdasdasdasdas"}, "commit"=>"Create Client"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "clients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asdasdasdasdas"], ["created_at", "2018-04-11 10:17:07.415661"], ["updated_at", "2018-04-11 10:17:07.415661"]]
+  [1m[35m (161.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/4
+Completed 302 Found in 167ms (ActiveRecord: 162.5ms)
+
+
+Started GET "/clients/4" for 127.0.0.1 at 2018-04-11 13:17:07 +0300
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for 127.0.0.1 at 2018-04-11 13:17:08 +0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
