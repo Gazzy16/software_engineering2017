@@ -1,0 +1,11 @@
+<div>
+    <h1> <%= @article.title %></h1>
+    <div clas = "row">
+        <div class="col-sm-6">
+            <%= image_tag @article.picture, class: "img-fluid img-thumbnail"%>
+        </div>
+        <div class="col-sm-6">
+            <p> <%= @article.body %></p>
+        </div>
+        <%= link_to("Back to Articles", articles_path, class:"btn btn-success")%>
+</div>
