@@ -1,0 +1,22 @@
+<h1> Showing all articles </h1>
+<div class="row">
+	<% @articles.each do |article| %>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<h4><%= article.title %></h4>
+			<%= image_tag article.picture, class: "img-fluid" %>
+			<p> <%= article.body.first(40) %>...</p>
+
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			  Full description
+			</button>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<%= article.body %>
+				</div>  
+			  </div>
+			</div>
+		</div>
+	<% end %>
+</div>
