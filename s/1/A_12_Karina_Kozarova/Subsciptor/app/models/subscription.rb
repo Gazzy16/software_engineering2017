@@ -1,7 +1,4 @@
 class Subscription < ApplicationRecord
-  validate :price_under_10
-
-  def price_under_10
-
-  end
+	has_many: subscription_users
+	has_many: users,through: :subscription_users
 end
