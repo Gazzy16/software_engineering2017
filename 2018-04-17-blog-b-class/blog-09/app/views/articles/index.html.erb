@@ -1,0 +1,11 @@
+<h1>Показваме всички артикълс</h1>
+<div class ="row">
+<% @articles.each do |article|%>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <h4> <%= article.title%></h4>
+  <%= image_tag "https://images.pexels.com/photos/219998/pexels-photo-219998.jpeg?auto=compress&cs=tinysrgb&h=350", class: "img-fluid" %>
+
+  <button class="btn btn-info btn-lg" data-toggle="modal" data-target="exampleModal"> Open modal </button>
+  </div>
+<% end%>
+</div>
