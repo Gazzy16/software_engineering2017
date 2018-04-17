@@ -1,0 +1,17 @@
+<h1> Show all Articles</h1>
+<div class="row">
+<% @articles.each do |article| %>
+	<div class="col-md-6 col-lg-3 col-ms-2">	
+		<h4><%= article.title %></h4>
+		<%= image_tag src="https://www.qinetiq-na.com/wp-content/uploads/MTRS_sm.jpg", class:"img-fluid" %>
+		
+		<button class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal"> Open modal </button>
+<div class="modal fade" id="exmpleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModelLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	</div>
+</div>
+</div>
+	</div>
+<% end %>
+</div>
