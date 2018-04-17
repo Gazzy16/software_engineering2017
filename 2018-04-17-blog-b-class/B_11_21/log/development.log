@@ -1,0 +1,317 @@
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (69.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticle (20180416095526)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "title" varchar, "body" text, "picture" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180416095526"]]
+  [1m[35m (71.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-17 13:13:29.857828"], ["updated_at", "2018-04-17 13:13:29.857828"]]
+  [1m[35m (52.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2018-04-17 16:15:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 470ms (Views: 459.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-17 16:16:40 +0300
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (20.2ms)
+  Rendered articles/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 93ms (Views: 71.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user_subs/new" for 127.0.0.1 at 2018-04-17 16:24:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user_subs/new"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (6.2ms)
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.1ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.4ms)
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.7ms)
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-17 16:24:26 +0300
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (5.8ms)
+  Rendered articles/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 4578ms (Views: 4566.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-17 16:42:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (11.6ms)
+  Rendered articles/new.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 3700ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/elsyser/Desktop/tp/TP-2018/blog/app/views"
+):
+     9:   </head>
+    10: 
+    11:   <body>
+    12:     	<%= render "layouts/navbar" %>
+    13: 	<div class="container">
+    14: 		<%= yield %>
+    15: 	</div>
+  
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___1026060799183813192_37416340'
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.3ms)
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-17 16:44:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (9.5ms)
+  Rendered articles/new.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/elsyser/Desktop/tp/TP-2018/blog/app/views"
+):
+    13: 	<div class="container">
+    14: 		<%= yield %>
+    15: 	</div>
+    16: 	<%= render "layouts/footer" %>
+    17:   </body>
+    18: </html>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___582618130100260200_20461420'
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-17 16:45:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (9.6ms)
+  Rendered articles/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3832ms (Views: 3807.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 16:49:18 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 3.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:03.980084"], ["updated_at", "2018-04-17 13:50:03.980084"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (46.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:06.304972"], ["updated_at", "2018-04-17 13:50:06.304972"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (56.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:07.563190"], ["updated_at", "2018-04-17 13:50:07.563190"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (454.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:08.329659"], ["updated_at", "2018-04-17 13:50:08.329659"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (74.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:09.293972"], ["updated_at", "2018-04-17 13:50:09.293972"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (69.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:10.177947"], ["updated_at", "2018-04-17 13:50:10.177947"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (77.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:11.048525"], ["updated_at", "2018-04-17 13:50:11.048525"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (74.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:17.137996"], ["updated_at", "2018-04-17 13:50:17.137996"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (68.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:19.818862"], ["updated_at", "2018-04-17 13:50:19.818862"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:20.832945"], ["updated_at", "2018-04-17 13:50:20.832945"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (66.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:21.721756"], ["updated_at", "2018-04-17 13:50:21.721756"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:22.583694"], ["updated_at", "2018-04-17 13:50:22.583694"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:23.642053"], ["updated_at", "2018-04-17 13:50:23.642053"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:35.831747"], ["updated_at", "2018-04-17 13:50:35.831747"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (69.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "title", "body", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2018-04-17 13:50:40.129143"], ["updated_at", "2018-04-17 13:50:40.129143"], ["title", "Title"], ["body", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["picture", "https://s3.amazonaws.com/fllcasts/content_pictures/pictures/000/001/514/3d28ced2cff77cb3556159b4eed661b9510212a2Lego-Mindstorms-Motorcycle-Chopper-Robot-Ev3-2-Fllcasts.png?1521639145"]]
+  [1m[35m (80.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 16:58:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 356ms (Views: 341.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 17:00:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 332ms (Views: 314.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 17:02:07 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 17:03:19 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 17:14:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 331ms (Views: 314.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-17 17:15:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 660ms (Views: 642.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-17 17:20:27 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 103ms (Views: 98.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-17 17:25:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    4: 	<div class="row">
+    5: 
+    6: 		<div class="col-sm-6">
+    7: 			<%= image_tag @article.picture class: "img-fluid" %>
+    8: 		</div>
+    9: 
+   10: 		<div class="col-sm-6">	
+  
+app/views/articles/show.html.erb:7:in `_app_views_articles_show_html_erb__3205371756191104445_32312080'
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.8ms)
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-17 17:26:21 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 300ms (Views: 298.1ms | ActiveRecord: 0.4ms)
+
+
