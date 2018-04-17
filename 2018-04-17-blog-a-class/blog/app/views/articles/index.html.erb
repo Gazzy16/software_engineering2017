@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+  <div class="row">
+
+    <% @articles.each do |article| %>
+      <div class="col-lg-3 col-md-4 col-s-6 col-xs-12">
+        <h3><%= article.title %></h3>
+        <div>
+          <%= image_tag "https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg", class: "img-fluid"%>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Show Image
+          </button>
+          <div class="modal fade" id="exampleModal" tabinedex="-1" role="dialog" aria-labbeledby="exampleModalLabel" aria-hidden=""></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
