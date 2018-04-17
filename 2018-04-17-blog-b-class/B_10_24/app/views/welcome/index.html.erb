@@ -1,0 +1,10 @@
+<h1>Показваме всички атикълс. </h1>
+<div class="row">
+	<% @articles.each do |article| %>
+	<div class="col-sm-3 col-md-4 col-sm-6 col-xs-12">
+		<h4> <%= article.title %></h4>
+		<%= image_tag article.picture, class: "img-fluid" %>
+<p> <%= article.body.first(40) %> ...</p>
+	</div>
+	<% end %>
+</div>
