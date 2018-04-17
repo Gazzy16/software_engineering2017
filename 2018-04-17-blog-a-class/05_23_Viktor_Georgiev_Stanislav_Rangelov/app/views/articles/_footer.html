@@ -1,0 +1,20 @@
+<footer>
+	<span class="text-muted"> footer </span>
+</footer>
+
+<p id="notice"><$= notice %></p>
+
+<h1>Articles</h1>
+<div class="row">
+
+	<% @articles.each do |article| %>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-sx-12">
+		<h3> <%= article.title %> </h3>
+		
+	<div>
+		<%= image_tag article.picture, class: "img-fluid"%>
+	</div>
+</div>
+<% end %>
+<br>
+< link_to articles , articles_path>
