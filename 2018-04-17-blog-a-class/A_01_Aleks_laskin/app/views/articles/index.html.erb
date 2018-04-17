@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<div class = "row">
+    <% @articles.each do |article| %>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <h3> Title </h3>
+        <div>
+          <div data-toggle = "modal" data-target = "#exampleModalCenter">
+          <%= image_tag "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=350",class: "img-fluid"%>
+          </div>
+          <p>SomeTextSomeTextSomeText ...</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Show image
+          </button>
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= image_tag "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=350", class: "img-fluid" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
