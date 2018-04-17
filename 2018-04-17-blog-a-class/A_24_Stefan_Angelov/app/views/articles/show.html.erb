@@ -1,0 +1,13 @@
+<div class="px-1 py-4">
+<h1> <%= @article.title %> </h1>
+	<div class="row">
+		<div class="col-sm-6">
+			<%= image_tag @article.picture, class: "img-fluid img-thumbnail" %>
+		</div>
+		<div class="col-sm-6">
+			<p> <%= @article.body %> </p>
+		</div>
+		<%= link_to("Back to black", articles_path, class: "btn btn-success") %>
+		<button class="btn btn-danger btn-lg disabled">it's the ____ we back</button>
+	</div>
+</div>
