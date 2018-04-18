@@ -6,7 +6,7 @@ class UsersSubscriptionsController < ApplicationController
   def index
     @users_subscriptions = UsersSubscription.all
     @users = User.all
-	  @subscriptions = Subscription.all
+    @subscriptions = Subscription.all
   end
 
   # GET /users_subscriptions/1
