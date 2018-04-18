@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418111009) do
+ActiveRecord::Schema.define(version: 20180418102742) do
 
-  create_table "subscriptions", force: :cascade do |t|
-    t.integer "price"
+  create_table "sub_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sub_id"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "subscriptions_users", force: :cascade do |t|
-    t.integer "subscription_id"
-    t.integer "user_id"
-    t.integer "user_role"
+  create_table "subs", force: :cascade do |t|
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subscription_id", "user_id"], name: "index_subscriptions_users_on_subscription_id_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
