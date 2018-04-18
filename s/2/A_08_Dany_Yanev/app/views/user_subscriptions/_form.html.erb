@@ -13,12 +13,14 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :user_subscription_user_id %>
+    <!-- <%= form.text_field :user_id, id: :user_subscription_user_id %> -->
+    <%= collection_select(:user_subscription, :user_id, User.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :subscription_id %>
-    <%= form.text_field :subscription_id, id: :user_subscription_subscription_id %>
+    <!-- <%= form.text_field :subscription_id, id: :user_subscription_subscription_id %> -->
+    <%= collection_select(:user_subscription, :subscription, Subscription.all, :id, :price) %>
   </div>
 
   <div class="field">
