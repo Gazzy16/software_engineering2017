@@ -1,0 +1,7 @@
+<h1>Subscription users: </h1>
+
+<ul>
+  <% @subscription_users.each do |subscription_user| %>
+    <li><%= link_to subscription_user, subscription_user %></li>
+  <% end %>
+</ul>
