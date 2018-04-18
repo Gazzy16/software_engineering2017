@@ -1,0 +1,12 @@
+<%= form_for @subscription_user, url: subscription_users_path do |f| %>
+  <%= f.label :user_id %>
+  <%= f.select :user_id, options_for_select(User.all.map { |u| [u.full_name, u.id] }) %>
+
+  <%= f.label :subscription_id %>
+  <%= f.select :subscription_id, options_for_select(Subscription.all.map { |s| [s.to_s, s.id] }) %>
+
+  <%= f.label :role %>
+  <%= f.select :role, options_for_select(SubscriptionUser.roles.keys.map { |key| [key.humanize, key] }) %>
+
+  <%= f.submit 'Create subscription user' %>
+<% end %>
