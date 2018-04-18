@@ -7,5 +7,6 @@ class CreateSubscriptionUsers < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :subscription_users, [:user_id, :subscription_id], unique: true, :name => 'tldr'
   end
 end

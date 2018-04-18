@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180411120048) do
     t.integer "subscription_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "subscription_id"], name: "tldr", unique: true
   end
 
   create_table "subscriptions", force: :cascade do |t|
