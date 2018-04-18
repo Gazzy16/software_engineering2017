@@ -5,6 +5,8 @@ class UsersSubscriptionsController < ApplicationController
   # GET /users_subscriptions.json
   def index
     @users_subscriptions = UsersSubscription.all
+    @users = User.all
+	  @subscriptions = Subscription.all
   end
 
   # GET /users_subscriptions/1
