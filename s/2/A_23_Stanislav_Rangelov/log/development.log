@@ -1,0 +1,311 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (80.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateUsers (20180418120146)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180418120146_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180418120146"]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateSubscriptions (20180418120159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "subscriptions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180418120159_create_subscriptions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180418120159"]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (71.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateSubscriptionUsers (20180418120426)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateSubscriptionUsers (20180418120426)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180418120426_create_subscription_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "subscription_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "userid" integer, "subscriptionid" integer, "role" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180418120426_create_subscription_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180418120426"]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (80.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-18 12:05:06.159624"], ["updated_at", "2018-04-18 12:05:06.159624"]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pesho"], ["created_at", "2018-04-18 12:21:52.033208"], ["updated_at", "2018-04-18 12:21:52.033208"]]
+  [1m[35m (53.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubscription Create (0.3ms)[0m  [1m[32mINSERT INTO "subscriptions" ("price", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["price", 100], ["created_at", "2018-04-18 12:22:15.395576"], ["updated_at", "2018-04-18 12:22:15.395576"]]
+  [1m[35m (52.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT  "subscriptions".* FROM "subscriptions" ORDER BY "subscriptions"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubscriptionUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "subscription_users" WHERE "subscription_users"."userid" IS NULL AND "subscription_users"."subscriptionid" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT  "subscriptions".* FROM "subscriptions" ORDER BY "subscriptions"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubscriptionUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "subscription_users" WHERE "subscription_users"."userid" IS NULL AND "subscription_users"."subscriptionid" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to AddIndexOnSubscriptionusers (20180418123510)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_subscriptionusers_on_subscriptonid_and_userid" ON "subscriptionusers" ("subscriptonid", "userid")[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to AddIndexOnSubscriptionusers (20180418123510)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_subscriptionusers_on_subscriptonid_and_userid" ON "subscriptionusers" ("subscriptonid", "userid")[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to AddIndexOnSubscriptionusers (20180418123510)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_subscription_users_on_subscriptonid_and_userid" ON "subscription_users" ("subscriptonid", "userid")[0m
+  ↳ db/migrate/20180418123510_add_index_on_subscriptionusers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180418123510"]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (75.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2018-04-18 15:50:42 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elsyser/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elsyser/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elsyser/.rvm/gems/ruby-2.4.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-04-18 15:50:49 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 347ms (Views: 336.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2018-04-18 15:51:04 +0300
+Processing by SubscriptionsController#index as HTML
+  Rendering subscriptions/index.html.erb within layouts/application
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+  ↳ app/views/subscriptions/index.html.erb:14
+  Rendered subscriptions/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/subscriptionusers" for 127.0.0.1 at 2018-04-18 15:51:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/subscriptionusers"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/subscription_users" for 127.0.0.1 at 2018-04-18 15:51:21 +0300
+Processing by SubscriptionUsersController#index as HTML
+  Rendering subscription_users/index.html.erb within layouts/application
+  [1m[36mSubscriptionUser Load (0.2ms)[0m  [1m[34mSELECT "subscription_users".* FROM "subscription_users"[0m
+  ↳ app/views/subscription_users/index.html.erb:17
+  Rendered subscription_users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:51:23 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (6.1ms)
+  Rendered subscription_users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 34ms (Views: 26.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-18 15:51:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subscriptions/1" for 127.0.0.1 at 2018-04-18 15:51:44 +0300
+Processing by SubscriptionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subscriptions_controller.rb:67
+  Rendering subscriptions/show.html.erb within layouts/application
+  Rendered subscriptions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subscriptions" for 127.0.0.1 at 2018-04-18 15:51:47 +0300
+Processing by SubscriptionsController#index as HTML
+  Rendering subscriptions/index.html.erb within layouts/application
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+  ↳ app/views/subscriptions/index.html.erb:14
+  Rendered subscriptions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/subscription_users" for 127.0.0.1 at 2018-04-18 15:51:58 +0300
+Processing by SubscriptionUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fmq/5NG3i0OHlcFcm2C0NHO4wKQusHh5EV99lIkAhsgv2WeluuBBqJNQlMYaRctJyF1Wehun8XU0Li98sDx9NA==", "subscription_user"=>{"id"=>"1", "userid"=>"1", "subscriptionid"=>"1", "role"=>"1"}, "commit"=>"Create Subscription user"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subscription_users_controller.rb:30
+  [1m[36mSubscriptionUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "subscription_users" WHERE "subscription_users"."userid" = ? AND "subscription_users"."subscriptionid" = ? LIMIT ?[0m  [["userid", 1], ["subscriptionid", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subscription_users_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/subscription_users_controller.rb:30
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (3.0ms)
+  Rendered subscription_users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subscription_users" for 127.0.0.1 at 2018-04-18 15:52:07 +0300
+Processing by SubscriptionUsersController#index as HTML
+  Rendering subscription_users/index.html.erb within layouts/application
+  [1m[36mSubscriptionUser Load (0.2ms)[0m  [1m[34mSELECT "subscription_users".* FROM "subscription_users"[0m
+  ↳ app/views/subscription_users/index.html.erb:17
+  Rendered subscription_users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/subscription_users" for 127.0.0.1 at 2018-04-18 15:52:26 +0300
+Processing by SubscriptionUsersController#index as HTML
+  Rendering subscription_users/index.html.erb within layouts/application
+  [1m[36mSubscriptionUser Load (0.2ms)[0m  [1m[34mSELECT "subscription_users".* FROM "subscription_users"[0m
+  ↳ app/views/subscription_users/index.html.erb:17
+  Rendered subscription_users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:52:27 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (2.5ms)
+  Rendered subscription_users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:52:39 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (2.5ms)
+  Rendered subscription_users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:53:58 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (2.5ms)
+  Rendered subscription_users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:54:16 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (2.5ms)
+  Rendered subscription_users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription_users/new" for 127.0.0.1 at 2018-04-18 15:54:16 +0300
+Processing by SubscriptionUsersController#new as HTML
+  Rendering subscription_users/new.html.erb within layouts/application
+  Rendered subscription_users/_form.html.erb (2.7ms)
+  Rendered subscription_users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
