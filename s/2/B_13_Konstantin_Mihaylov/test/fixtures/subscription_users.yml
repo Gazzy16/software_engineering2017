@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 9.99
+  subscription_id: 9.99
+  role: 9.99
+
+two:
+  user_id: 9.99
+  subscription_id: 9.99
+  role: 9.99
