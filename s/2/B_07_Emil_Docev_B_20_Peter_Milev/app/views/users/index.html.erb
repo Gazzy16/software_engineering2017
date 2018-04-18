@@ -13,9 +13,6 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-<% user.subscription_users.each do |s_u| %>
-			    <td><%= @subscriptions.find(s_u.subscription_id).price %></td>
-<% end %>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
