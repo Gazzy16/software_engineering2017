@@ -1,12 +1,13 @@
 class SubscriptionsUser < ApplicationRecord
 	belongs_to :subscription
 	belongs_to :user
+	validates_uniqueness_of :user_id, scope: :subscription_id
 
 	validates_presence_of :subscription
   validates_presence_of :user
 
 	#validate :validate_roles_by_price
-	validate :validate_roles_in_subscription
+	#validate :validate_roles_in_subscription -Gospodina: Bezumno e...
 
 private
 	def validate_roles_by_price
