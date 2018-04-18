@@ -3,8 +3,9 @@ class Validator < ActiveModel::Validator
     students = 0
     teachers = 0;
     sub = Subscription.find(connection.subscription_id)
+    connections = UserSubscribtionConnection.all
     if sub.price < 10
-    	 UserSubscribtionConnection.all.each do |record|
+    	 connections.all.each do |record|
     	 	if record.subscription_id == connection.subscription_id && record.role == "Student"    	 		
     	 		students+=1
     	 	else 

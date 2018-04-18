@@ -1,9 +1,5 @@
 class UsersSubscription < ApplicationRecord
     belongs_to :user
     belongs_to :subscription
-    validate :roles_limit
-        
-    
-        def roles_limit
-        end
+    validates_uniqueness_of :user_id, scope: :subscription_id    
 end
