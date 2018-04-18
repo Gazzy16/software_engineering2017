@@ -18,12 +18,14 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :subscription_user_user_id %>
+    <%= form.select local.user.subscriptions do |sub|%>
+    <%= content_tag(:option, value: sub) %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :subscription_id %>
-    <%= form.number_field :subscription_id, id: :subscription_user_subscription_id %>
+    <%= form.select :subscription_id, id: :subscription_user_subscription_id %>
   </div>
 
   <div class="actions">
