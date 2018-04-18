@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_sub.user %>
+</p>
+
+<p>
+  <strong>Sub:</strong>
+  <%= @user_sub.sub %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @user_sub.role %>
+</p>
+
+<%= link_to 'Edit', edit_user_sub_path(@user_sub) %> |
+<%= link_to 'Back', user_subs_path %>
