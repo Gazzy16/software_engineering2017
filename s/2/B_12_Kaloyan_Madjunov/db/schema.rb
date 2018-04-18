@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418102805) do
+ActiveRecord::Schema.define(version: 20180418111009) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer "price"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180418102805) do
     t.integer "user_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subscription_id", "user_id"], name: "index_subscriptions_users_on_subscription_id_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
