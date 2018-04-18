@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sub_type: MyString
+  user_id: 1
+  subscription_id: 1
+
+two:
+  sub_type: MyString
+  user_id: 1
+  subscription_id: 1
