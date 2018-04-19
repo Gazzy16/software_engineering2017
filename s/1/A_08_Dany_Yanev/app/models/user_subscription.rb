@@ -1,19 +1,21 @@
+class UserSubscriptionValidator < ActiveModel::Validator
+  def validate(record)
+    subs = UserSubscription.where(:subscription_id => record.subscription_id).first
+
+    if record.subscription.price < 10 and
+      ((subs.where(:user_type => '2').count > 2 and record.user_type == '2') or
+      (subs.where(:user_type => '1').count > 10 and record.user_type == '1'))
+
+      record.errors.add(:subscription, 'doesn\'t support more participants of this type.')
+      throw :abort
+    end
+  end
+end
+
 class UserSubscription < ApplicationRecord
   belongs_to :user
   belongs_to :subscription
 
-  validate :can
-
-  def can
-    if self.subscription.price < 10
-      if self.subscription.user_subscriptions.where(user_type: "teacher").count >= 2 && self.user_type == "teacher"
-        self.errors.add(:Subscription, "- No more allowed teachers for this price")
-        throw :abort
-      end
-      if self.subscription.user_subscriptions.where(user_type: "student").count >= 10 && self.user_type == "student"
-        self.errors.add(:Subscription, "- No more allowed students for this price")
-        throw :abort
-      end
-    end
-  end
+  validates :user_type, acceptance: {accept: ['1', '2']}
+  validates_with UserSubscriptionValidator
 end
