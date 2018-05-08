@@ -1,0 +1,6 @@
+Rails.application.routes.draw do
+  resources :products, only: [:index]
+  
+  get '/products/:id', to: 'products#show'
+  
+end
