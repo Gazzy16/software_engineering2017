@@ -29,6 +29,13 @@
         <p> <%= article.body.first(20) %> ...</p>
 
         <%= render 'set_order_buttons', article: article %>
+
+        <%= link_to 'Destroy article', article,
+          remote: true,
+          data: { confirm: "Are you sure you want to destroy \"#{article.title}\"?" },
+          method: :delete,
+          class: 'btn btn-warning'
+        %>
       </div>
     </div>
   <% end %>
