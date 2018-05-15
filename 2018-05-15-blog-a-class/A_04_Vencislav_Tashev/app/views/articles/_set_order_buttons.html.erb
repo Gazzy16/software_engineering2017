@@ -1,0 +1,14 @@
+<div class="btn-group">
+  <% { true: :success, false: :danger }.each do |order_first, btn_type| %>
+    <%= button_to "Set #{order_first} to ordered_first", article,
+      remote: true,
+      params: {
+        article: {
+          ordered_first: order_first
+        }
+      },
+      method: :put,
+      class: "btn btn-#{btn_type}"
+    %>
+  <% end %>
+</div>
