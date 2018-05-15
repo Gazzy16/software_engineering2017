@@ -1282,3 +1282,34 @@ Processing by UserSubscriptionsController#index as HTML
 Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/user_subscriptions" for 127.0.0.1 at 2018-04-18 14:05:34 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserSubscriptionsController#index as HTML
+  Rendering user_subscriptions/index.html.erb within layouts/application
+  [1m[36mUserSubscription Load (0.2ms)[0m  [1m[34mSELECT "user_subscriptions".* FROM "user_subscriptions"[0m
+  Rendered user_subscriptions/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 251ms (Views: 226.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_subscriptions/new" for 127.0.0.1 at 2018-04-18 14:05:42 +0300
+Processing by UserSubscriptionsController#new as HTML
+  Rendering user_subscriptions/new.html.erb within layouts/application
+  Rendered user_subscriptions/_form.html.erb (10.6ms)
+  Rendered user_subscriptions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_subscriptions" for 127.0.0.1 at 2018-04-18 14:05:46 +0300
+Processing by UserSubscriptionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"94V+jaMuckCXJHq8GkkylfqM30RrDd0D/kRrit0KmepQejEXK3sain987TLc6HV43dZlzKcxz9Ohqd54G87E7w==", "user_subscription"=>{"user_id"=>"3", "subscription_id"=>"2", "type_of"=>"asd"}, "commit"=>"Create User subscription"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserSubscription Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "user_subscriptions" WHERE "user_subscriptions"."user_id" = ? AND "user_subscriptions"."subscription_id" = ? LIMIT ?[0m  [["user_id", 3], ["subscription_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering user_subscriptions/new.html.erb within layouts/application
+  Rendered user_subscriptions/_form.html.erb (2.9ms)
+  Rendered user_subscriptions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 63ms (Views: 25.5ms | ActiveRecord: 1.9ms)
+
+
