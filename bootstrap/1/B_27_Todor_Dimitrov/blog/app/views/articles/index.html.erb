@@ -1,0 +1,53 @@
+<h2>Articles</h2>
+<div class="row">
+  <% @articles.each do |article| %>
+  <% order_class = article.ordered_first ? "order-first" : "" %>
+    <div class="col-6 <%= order_class %> mb-4">
+      <div class="card p-2">
+        <%= link_to article_path(article) do %>
+          <h4><%= article.title %></h4>
+          <% end %>
+          <!-- Button trigger modal -->
+       
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <%= image_tag article.picture, class: "img-thumbnail" %>
+            </div>
+          </div>
+           <span data-toggle="modal" data-target="#exampleModal" class="pb-2">
+            <%= image_tag article.picture, class: "img-thumbnail" %>
+            <h5><%= article.title %></h5>
+            <%= article.body %>
+          </span>
+          <%= button_to("Set ordered_first to true", article,
+              remote: true,
+              params:{
+                article:{
+                  ordered_first: true
+                }
+              },
+              method: :put,
+              data: {},
+              class: "btn btn-success"
+              ) %>
+
+              <%= button_to("Set ordered_first to false", article,
+              remote: true,
+              params:{
+                article:{
+                  ordered_first: false
+                }
+              },
+              method: :put,
+              data: {},
+              class: "btn btn-warning"
+              ) %>
+        <p> <%= article.body.first(20) %> ...</p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Article', new_article_path %>
