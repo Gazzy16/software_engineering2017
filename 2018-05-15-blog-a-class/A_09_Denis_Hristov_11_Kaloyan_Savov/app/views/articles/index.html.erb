@@ -1,0 +1,49 @@
+<h2>Articles</h2>
+<div class="row">
+  <% @articles.each do |article| %>
+  <% order_class = article.ordered_first ? "order-first" : "" %>
+    <div class="col-xl-6 col-lg-6 col-sm-6 col-6 <%= order_class %> mb-4">
+      <div class="card p-2">
+        <%= link_to article_path(article) do %>
+          <h4><%= article.title %></h4>
+          <% end %>
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <%= image_tag article.picture, class: "img-thumbnail" %>
+            </div>
+          </div>
+           <span data-toggle="modal" data-target="#exampleModal" class="pb-2">
+            <%= image_tag article.picture, class: "img-thumbnail" %>
+          </span>
+
+        <p> <%= article.body %> ...</p>
+
+        <%= button_to "set true to ordered first", 
+          article,
+          remote: true,
+          params: {
+            article: {
+              ordered_first: true
+            }
+          },
+          method: :put,
+          class: "btn btn-success" %>
+
+          <%= button_to "set false to ordered first", 
+          article,
+          remote: true,
+          params: {
+            article: {
+              ordered_first: false
+            }
+          },
+          method: :put,
+          class: "btn btn-danger" %>
+              </div>
+            </div>
+          <% end %>
+</div>
+<br>
+
+<%= link_to 'New Article', new_article_path %>
