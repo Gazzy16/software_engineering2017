@@ -1,0 +1,21 @@
+<%= button_to "Set true to ordered_first", article, 
+  remote: true,
+  params: {
+    article: {
+      ordered_first: true
+    }
+  },
+  method: :put,
+  class: 'btn btn-success'
+%>
+
+<%= button_to "Set false to ordered_first", article, 
+  remote: true,
+  params: {
+    article: {
+      ordered_first: false
+    }
+  },
+  method: :put,
+  class: 'btn btn-danger'
+%>
