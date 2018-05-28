@@ -1,0 +1,6 @@
+This took me waaaay too long, and it's incomplete.
+
+https://drive.google.com/open?id=1QV3pfKoDmo29w3MH-wcF96G4MicsdIbZ
+
+Feedback:
+Доста готино, но не разбирам основите. В смисъл, радва ме да се опитвам да пиша игри, но си нямам и на идея как да направя GameObject или като цяло как работи обекния модел на Unity. Аз бих предпочел или общи принцпи или engine-specific задълбаване.
