@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team color:</strong>
+  <%= @tems_to_member.team_color %>
+</p>
+
+<p>
+  <strong>Member name:</strong>
+  <%= @tems_to_member.member_name %>
+</p>
+
+<%= link_to 'Edit', edit_tems_to_member_path(@tems_to_member) %> |
+<%= link_to 'Back', tems_to_members_path %>
