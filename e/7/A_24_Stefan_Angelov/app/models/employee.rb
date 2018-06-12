@@ -3,4 +3,5 @@ class Employee < ApplicationRecord
   validates :email, uniqueness: true
 
   has_one :company
+  belongs_to :company
 end
