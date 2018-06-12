@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tems To Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team color</th>
+      <th>Member name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tems_to_members.each do |tems_to_member| %>
+      <tr>
+        <td><%= tems_to_member.team_color %></td>
+        <td><%= tems_to_member.member_name %></td>
+        <td><%= link_to 'Show', tems_to_member %></td>
+        <td><%= link_to 'Edit', edit_tems_to_member_path(tems_to_member) %></td>
+        <td><%= link_to 'Destroy', tems_to_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tems To Member', new_tems_to_member_path %>
