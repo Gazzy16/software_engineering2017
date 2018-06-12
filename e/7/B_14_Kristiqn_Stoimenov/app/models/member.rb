@@ -4,10 +4,8 @@ class Member < ApplicationRecord
 	has_many :teams, through: :tems_to_member_connections
 
 	validates :member_email, uniqueness: true
+	validates :member_email, confirmation: true
 
 	validate :team_exists
 
-   	def cinema_exists
-          errors[:team] << "must exist" unless Team.exists?(self.team_id)
-        end  
 end
