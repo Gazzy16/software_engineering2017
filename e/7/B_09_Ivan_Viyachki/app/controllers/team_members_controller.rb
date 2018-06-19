@@ -23,20 +23,27 @@ class TeamMembersController < ApplicationController
 
   # POST /team_members
   # POST /team_members.json
-  def create
-    @team_member = TeamMember.new(team_member_params)
-
-    respond_to do |format|
-      if @team_member.save
-        format.html { redirect_to @team_member, notice: 'Team member was successfully created.' }
-        format.json { render :show, status: :created, location: @team_member }
+    def create
+      @team_member = TeamMember.new(team_member_params)
+  
+      if !TeamMember.validColor(@team_member)
+        respond_to do |format|
+          flash[:error] = 'Teams member was not successfully created.'
+          format.html { render :new }
+          format.json { render json: teamMember.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :new }
-        format.json { render json: @team_member.errors, status: :unprocessable_entity }
+        respond_to do |format|
+          if @team_member.save
+            format.html { redirect_to @team_member, notice: 'Teams member was successfully created.' }
+            format.json { render :show, status: :created, location: @team_member }
+          else
+            format.html { render :new }
+            format.json { render json: @team_member.errors, status: :unprocessable_entity }
+          end
+        end
       end
     end
-  end
-
   # PATCH/PUT /team_members/1
   # PATCH/PUT /team_members/1.json
   def update
