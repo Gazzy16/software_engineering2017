@@ -1,6 +1,7 @@
 class Computer < ApplicationRecord
-	belongs_to :manufacture
- 	validate do
+	belongs_to :manufacture, :optional => true
+
+	validate do
     if architecture != "x86" && architecture !="x86_64" && architecture != "amd_64"
       errors.add(:architecture, "Can be only x86, x86_64, amd_64")
     end
