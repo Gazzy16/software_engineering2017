@@ -17,3 +17,23 @@
 	- this is available at /#{my_index}subjects/ where my_index is your class_number_firstname_lastname (example /11a_17_MartinDatsevsubjects/
 	- show a table with the columns : car_id, model, number, color, year, manufacture.name, manufacture.location
 
+Last commit: 4eda23
+
+
+= Task
+1. Create Computer on url /cars/new
+    -Model - string
+    -Number - number
+    -Architecture - string
+    -date manufactured - timedate
+
+2. Create Manufacture /manufactures/new
+    - name - string
+    - location - string
+
+3. Each computer is manufactured by one Manufacture. Each Manufacture makes a lot of computers. 
+4. Validate that when creating a computer the architecture could be only 'x86', 'x86_64' or 'amd_64'
+5. Validate that a Manufacture can not make more than 3 cars a month from a given architecture
+7. Show a list of all the computers and their manufacturers
+    - this is available at /#{my_index}subjects/ where my_index is your class_number_firstname_lastname (example /11a_17_MartinDatsevsubjects/
+    - show a table with the columns : computer_id, model, number, architecture, date, manufacture.name, manufacture.location
