@@ -28,14 +28,14 @@ class TeamMembersController < ApplicationController
   
       if !TeamMember.validColor(@team_member)
         respond_to do |format|
-          flash[:error] = 'Teams member was not successfully created.'
+          flash[:error] = 'School teacher was not successfully created.'
           format.html { render :new }
           format.json { render json: teamMember.errors, status: :unprocessable_entity }
         end
       else
         respond_to do |format|
           if @team_member.save
-            format.html { redirect_to @team_member, notice: 'Teams member was successfully created.' }
+            format.html { redirect_to @team_member, notice: 'School teacher was successfully created.' }
             format.json { render :show, status: :created, location: @team_member }
           else
             format.html { render :new }
