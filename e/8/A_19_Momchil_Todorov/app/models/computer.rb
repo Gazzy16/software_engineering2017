@@ -9,7 +9,7 @@ class Computer < ApplicationRecord
 
 	private
 	  	def validates_cars_in_manufacture
-	    	count = Car.where(architecture: architecture, date_manufactured: date_manufactured, manufacture_id: manufacture_id).count
+	    	count = Computer.where(architecture: architecture, date_manufactured: date_manufactured, manufacture_id: manufacture_id).count
 	    	if count >= 3
 	      		errors.add(:computers, "Max number of computers reached")
 	    	end
