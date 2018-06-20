@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
 
@@ -79,3 +81,4 @@ class TeamMembersController < ApplicationController
       params.require(:team_member).permit(:team_id, :member_id)
     end
 end
+>>>>>>> c05a47dd00f9c451927327325dd23d9fd0647475
