@@ -1,0 +1,25 @@
+<%= form_for(@manifacturer) do |f| %>
+  <% if @manifacturer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manifacturer.errors.count, "error") %> prohibited this manifacturer from being saved:</h2>
+
+      <ul>
+      <% @manifacturer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

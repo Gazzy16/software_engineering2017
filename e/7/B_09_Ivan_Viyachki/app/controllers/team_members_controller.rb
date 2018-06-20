@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
 
@@ -28,14 +30,14 @@ class TeamMembersController < ApplicationController
   
       if !TeamMember.validColor(@team_member)
         respond_to do |format|
-          flash[:error] = 'Teams member was not successfully created.'
+          flash[:error] = 'School teacher was not successfully created.'
           format.html { render :new }
           format.json { render json: teamMember.errors, status: :unprocessable_entity }
         end
       else
         respond_to do |format|
           if @team_member.save
-            format.html { redirect_to @team_member, notice: 'Teams member was successfully created.' }
+            format.html { redirect_to @team_member, notice: 'School teacher was successfully created.' }
             format.json { render :show, status: :created, location: @team_member }
           else
             format.html { render :new }
@@ -79,3 +81,4 @@ class TeamMembersController < ApplicationController
       params.require(:team_member).permit(:team_id, :member_id)
     end
 end
+>>>>>>> c05a47dd00f9c451927327325dd23d9fd0647475
