@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Manifacturers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manifacturers.each do |manifacturer| %>
+      <tr>
+        <td><%= manifacturer.name %></td>
+        <td><%= manifacturer.location %></td>
+        <td><%= link_to 'Show', manifacturer %></td>
+        <td><%= link_to 'Edit', edit_manifacturer_path(manifacturer) %></td>
+        <td><%= link_to 'Destroy', manifacturer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manifacturer', new_manifacturer_path %>
