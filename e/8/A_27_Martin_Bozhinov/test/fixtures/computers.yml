@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  number: 1
+  architecture: MyString
+  date_manufactured: 
+
+two:
+  model: MyString
+  number: 1
+  architecture: MyString
+  date_manufactured: 
