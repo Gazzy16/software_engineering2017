@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carmanufactures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carmanufactures.each do |carmanufacture| %>
+      <tr>
+        <td><%= link_to 'Show', carmanufacture %></td>
+        <td><%= link_to 'Edit', edit_carmanufacture_path(carmanufacture) %></td>
+        <td><%= link_to 'Destroy', carmanufacture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carmanufacture', new_carmanufacture_path %>
