@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 class TeamMember < ApplicationRecord
     belongs_to :member
     belongs_to :team
@@ -21,4 +20,4 @@ class TeamMember < ApplicationRecord
 	  end
 	end
 end
->>>>>>> c05a47dd00f9c451927327325dd23d9fd0647475
+
