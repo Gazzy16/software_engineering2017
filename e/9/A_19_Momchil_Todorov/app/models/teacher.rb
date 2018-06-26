@@ -3,5 +3,5 @@ class Teacher < ApplicationRecord
 	has_many :schools, through: :teacher_schools
 
 	validates :first_name, uniqueness: { scope: :last_name,
-    message: "there is another teacher with this name already" }
+    message: "There is another teacher with this name already" }
 end
