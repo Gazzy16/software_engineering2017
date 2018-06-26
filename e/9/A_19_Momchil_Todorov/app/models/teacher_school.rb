@@ -6,8 +6,8 @@ class TeacherSchool < ApplicationRecord
 
     private 
     def no_more_teacher_subject
-    	current_teacher = TeacherSchool.find(teacher_id: teacher_id)
-    	current_school = TeacherSchool.find(school_id: school_id)
+    	current_teacher = TeacherSchool.where(teacher_id: teacher_id)
+    	current_school = TeacherSchool.wher(eschool_id: school_id)
    		current_subject = teachs.subject
    		TeacherSchool.where(teacher_id: current_teacher, school_id: current_school).each do |c|
 			if c.teacher.subject == current_subject
