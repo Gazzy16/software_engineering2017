@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Connects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Teacher fisrtname</th>
+ <th>Teacher second_name</th>
+      <th>Teache emailr</th>
+ <th>School name</th>
+ <th>School number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connects.each do |connect| %>
+      <tr>
+<td><%= connect.teacher.first_name %></td>
+<td><%= connect.teacher.second_name %></td>
+<td><%= connect.teacher.email %></td>
+        <td><%= connect.school.name %></td>
+<td><%= connect.school.number %></td>
+        
+        <td><%= link_to 'Show', connect %></td>
+        <td><%= link_to 'Edit', edit_connect_path(connect) %></td>
+        <td><%= link_to 'Destroy', connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connect', new_connect_path %>
