@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>School:</strong>
+  <%= @connect.school %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @connect.teacher %>
+</p>
+
+<%= link_to 'Edit', edit_connect_path(@connect) %> |
+<%= link_to 'Back', connects_path %>
