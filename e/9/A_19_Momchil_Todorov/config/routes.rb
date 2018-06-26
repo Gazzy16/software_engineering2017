@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :schools
   resources :teachers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/A_19_Momchil_Todorov', to: 'teacher_schools#index'
 end
