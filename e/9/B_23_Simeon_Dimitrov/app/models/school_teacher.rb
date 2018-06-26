@@ -8,11 +8,15 @@ end
  
 private
 def check number
+	count = 0
     SchoolTeacher.where(teacher_id: self.teacher_id).each do |tt|
-        if validates :tt.first_name, length: {is: number}
-            return false
+        if tt.first_name.length == number
+            count = count + 1
         end
     end
+	if count >= 1
+		return false
+	end
     return true
 end
 
