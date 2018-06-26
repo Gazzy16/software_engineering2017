@@ -9,7 +9,7 @@ class TeacherSchool < ApplicationRecord
 		
 		TeacherSchool.where(school_id: new_school).each do |ts|
 			teacher = Teacher.find(ts.teacher_id)
-			if(teacher.subject = new_subject)
+			if teacher.subject = new_subject 
 				errors.add(:base, "Error with validation")
 			end
 		end
