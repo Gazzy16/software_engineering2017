@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @computer.model %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @computer.number %>
+</p>
+
+<p>
+  <strong>Architecture:</strong>
+  <%= @computer.architecture %>
+</p>
+
+<p>
+  <strong>Date manufactured:</strong>
+  <%= @computer.date_manufactured %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>

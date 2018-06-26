@@ -37,3 +37,8 @@ Last commit: 4eda23
 7. Show a list of all the computers and their manufacturers
     - this is available at /#{my_index}subjects/ where my_index is your class_number_firstname_lastname (example /11a_17_MartinDatsevsubjects/
     - show a table with the columns : computer_id, model, number, architecture, date, manufacture.name, manufacture.location
+
+Last commit - ab5a0a0326b439c2a0ba6fdf15810532321b2b93
+
+excluding Martin
+Second last commit 3601f8dc58c740be1dfa1bb0b8a8deb4f93f80ff

@@ -1,0 +1,22 @@
+<%= form_with(model: dev, local: true) do |form| %>
+  <% if dev.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dev.errors.count, "error") %> prohibited this dev from being saved:</h2>
+
+      <ul>
+      <% dev.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dev_name %>
+    <%= form.text_field :dev_name, id: :dev_dev_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
