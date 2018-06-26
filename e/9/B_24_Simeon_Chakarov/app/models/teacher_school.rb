@@ -9,7 +9,7 @@ class TeacherSchool < ApplicationRecord
     	current_school = TeacherSchool.where(school_id: school_id)
    		current_subject = teacher.subject
    		TeacherSchool.where(teacher_id: current_teacher, school_id: current_school).each do |c|
-			if c.teacher.name.length == c.school.number
+			if c.teacher.name.length != c.school.number
 				errors.add(:connect,"Ooops! Error with num->length")
 			end
 	end
