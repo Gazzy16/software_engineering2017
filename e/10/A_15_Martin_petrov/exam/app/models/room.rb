@@ -8,6 +8,13 @@ class Room < ApplicationRecord
 	end
 
 	validate do 
-		
+			sum = 0
+			Room.where(hotel_id: hotel_id).each do |rs|
+			sum += rs.square_meters
+		end
 	end
+
+		if sum + square_meters > 700
+		errors.add(:rooms, "More than 700")
+	end 
 end
