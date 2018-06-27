@@ -4,12 +4,14 @@ class Room < ApplicationRecord
     validate do
         if square_meters.to_f < 100 || square_meters.to_f > 200
             errors.add(:square_meters, "blabla")
+        end
     end
 
     vlaidate do
         hotel = Hotel.find(hotel_id)
         if hotel.rooms.length + 1 >10
             errors.add(:rooms, "blabla2")
+        end
     end
 
     validate do
@@ -20,5 +22,6 @@ class Room < ApplicationRecord
         end
         if sum > 7000
             errors.add(:rooms, "blabla3")
+        end
     end
 end
