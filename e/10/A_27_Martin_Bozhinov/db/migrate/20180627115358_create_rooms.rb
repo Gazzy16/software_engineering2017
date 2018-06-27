@@ -3,7 +3,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
     create_table :rooms do |t|
       t.integer :square_meters
       t.integer :number
-      t.belongs_to :hotel, index: true
+      t.references :hotel, index: true
       t.timestamps
     end
   end
