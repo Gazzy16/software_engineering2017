@@ -13,14 +13,14 @@ def check
 	end
 end
 
-validate :checkk
-
-private
-def checkk
-	countt = Specialty.where(school_id: self.school_id).count
-	if countt >= 70
-		errors.add(:base, "Problem 2")
-	end
+validate do
+	sum = 0
+    Specialty.where(school_id: school_id).each do |ts|
+      sum = sum + ts.studnum
+    end
+    if sum >= 200
+	errors.add(:base, "Problem!")
+    end
 end
 
 
