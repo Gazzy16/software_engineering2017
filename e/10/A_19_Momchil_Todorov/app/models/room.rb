@@ -18,7 +18,7 @@ class Room < ApplicationRecord
         	sum += rs.square_meters
     	end
 
-    	if sum+square_meters > 7000
+    	if sum + square_meters > 7000
         	errors.add(:rooms, "Max number of square meters reached")
         end 
 	end
