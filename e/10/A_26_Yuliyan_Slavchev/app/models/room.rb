@@ -1,7 +1,7 @@
 class Room < ApplicationRecord
   belongs_to :hotel
 
-  # validates :area, inclusion: 100..200
+  validates :area, inclusion: 100..200
 
   validate :rooms_area_sum
   validate :ten_rooms
