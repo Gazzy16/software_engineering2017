@@ -18,7 +18,7 @@ validate do
     Specialty.where(school_id: school_id).each do |ts|
       sum = sum + ts.studnum
     end
-    if sum >= 200
+    if sum >= 70
 	errors.add(:base, "Problem!")
     end
 end
