@@ -15,6 +15,6 @@ class Room < ApplicationRecord
 	end
 
 		if sum + square_meters > 700
-		errors.add(:rooms, "More than 7000")
+		errors.add(:rooms, "More than 700")
 	end 
 end
