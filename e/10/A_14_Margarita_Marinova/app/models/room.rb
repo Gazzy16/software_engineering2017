@@ -7,7 +7,7 @@ class Room < ApplicationRecord
         end
     end
 
-    vlaidate do
+    validate do
         hotel = Hotel.find(hotel_id)
         if hotel.rooms.length + 1 >10
             errors.add(:rooms, "blabla2")
