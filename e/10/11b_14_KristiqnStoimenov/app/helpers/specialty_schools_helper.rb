@@ -1,0 +1,2 @@
+module SpecialtySchoolsHelper
+end

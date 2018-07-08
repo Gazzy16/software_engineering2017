@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  square_meters: 1
+  number: 1
+  hotel_id: 1
+
+two:
+  square_meters: 1
+  number: 1
+  hotel_id: 1

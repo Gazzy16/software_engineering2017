@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
-    @teacher = Teacher.new(first_name: teacher_params[:first_name], second_name: teacher_params[:second_name], :subject: teacher_params[:subject], email: teacher_params[:email] )
+    @teacher = Teacher.new(first_name: teacher_params[:first_name], second_name: teacher_params[:second_name], subject: teacher_params[:subject], email: teacher_params[:email])
 
     respond_to do |format|
       if @teacher.save
