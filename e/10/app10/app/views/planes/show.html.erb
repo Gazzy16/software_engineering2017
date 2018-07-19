@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Manc:</strong>
+  <%= @plane.manc %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @plane.model %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @plane.price %>
+</p>
+
+<p>
+  <strong>Bid:</strong>
+  <%= @plane.bid %>
+</p>
+
+<%= link_to 'Edit', edit_plane_path(@plane) %> |
+<%= link_to 'Back', planes_path %>
