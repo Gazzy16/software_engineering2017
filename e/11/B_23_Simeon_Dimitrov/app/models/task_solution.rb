@@ -17,7 +17,8 @@ end
 
 validate do
 t = Task.find(self.task_id)
-if self.confirmed == 1 && t.solreq == 1 
+if self.confirmed == 1 && t.solreq == 1 && self.picture == nil
+errors.add(:base, "Problem 2")
 end
 end
 
