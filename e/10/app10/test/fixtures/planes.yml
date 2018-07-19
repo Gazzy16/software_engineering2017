@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manc: MyString
+  model: MyString
+  price: 1
+  bid: 1
+
+two:
+  manc: MyString
+  model: MyString
+  price: 1
+  bid: 1
