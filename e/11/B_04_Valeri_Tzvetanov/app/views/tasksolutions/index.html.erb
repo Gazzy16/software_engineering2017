@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tasksolutions</h1>
+
+<table>
+  <thead>
+    <tr>
+	<th>task name</th>
+      <th>description</th>
+	<th>Texts</th>
+      <th>required</th>
+      <th>Texts</th>
+      <th>Status</th>
+      <th>Confirmed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasksolutions.each do |tasksolution| %>
+      <tr>
+
+        <td><%= tasksolution.status %></td>
+        <td><%= tasksolution.texts %></td>
+        <td><%= tasksolution.status %></td>
+        <td><%= tasksolution.confirmed %></td>
+        <td><%= tasksolution.sid %></td>
+        <td><%= link_to 'Show', tasksolution %></td>
+        <td><%= link_to 'Edit', edit_tasksolution_path(tasksolution) %></td>
+        <td><%= link_to 'Destroy', tasksolution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tasksolution', new_tasksolution_path %>

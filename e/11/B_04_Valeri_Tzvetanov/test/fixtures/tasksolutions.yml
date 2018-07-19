@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  texts: MyString
+  status: MyString
+  confirmed: 1
+  sid: 1
+
+two:
+  texts: MyString
+  status: MyString
+  confirmed: 1
+  sid: 1
