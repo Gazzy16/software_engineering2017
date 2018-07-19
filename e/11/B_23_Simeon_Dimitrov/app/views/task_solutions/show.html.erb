@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @task_solution.picture %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task_solution.status %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @task_solution.confirmed %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task_solution.task_id %>
+</p>
+
+<%= link_to 'Edit', edit_task_solution_path(@task_solution) %> |
+<%= link_to 'Back', task_solutions_path %>

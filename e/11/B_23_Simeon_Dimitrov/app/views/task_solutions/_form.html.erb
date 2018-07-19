@@ -1,0 +1,37 @@
+<%= form_with(model: task_solution, local: true) do |form| %>
+  <% if task_solution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task_solution.errors.count, "error") %> prohibited this task_solution from being saved:</h2>
+
+      <ul>
+      <% task_solution.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :task_solution_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :task_solution_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirmed %>
+    <%= form.check_box :confirmed, id: :task_solution_confirmed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task_id %>
+    <%= form.number_field :task_id, id: :task_solution_task_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
