@@ -10,6 +10,7 @@ def check
 	if tt.picture == nil
 		sum = sum + 1
 	end
+	end
 	if self.picture == nil && sum + 1 > 3
 		errors.add(:base, "Problem 1") 
 	end
