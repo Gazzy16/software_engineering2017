@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  picture: 
+  status: 1
+  confirmed: false
+  task_id: 1
+
+two:
+  picture: 
+  status: 1
+  confirmed: false
+  task_id: 1
